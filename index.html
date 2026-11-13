@@ -9,23 +9,19 @@
         body { background-color: #f0f4f8; color: #333; line-height: 1.6; }
         .container { max-width: 1050px; margin: 0 auto; padding: 0 15px; }
 
-        /* Header */
         .navbar { background: linear-gradient(135deg, #0f4c81, #1e88e5); color: white; padding: 24px 0; text-align: center; box-shadow: 0 3px 10px rgba(0,0,0,0.15); }
         .navbar h1 { font-size: 2.2rem; letter-spacing: 0.5px; }
         .navbar p { font-size: 1rem; opacity: 0.95; margin-top: 5px; }
 
-        /* Banner & Cards */
         .welcome-banner { background: white; padding: 18px; margin: 20px 0; border-radius: 10px; text-align: center; border-left: 5px solid #1e88e5; box-shadow: 0 2px 6px rgba(0,0,0,0.06); }
         .card-box { background: white; padding: 22px; margin: 20px 0; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.08); }
 
-        /* Grids */
-        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 15px; margin-bottom: 25px; }
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; margin-top: 15px; margin-bottom: 25px; }
         .card-item { background: white; padding: 20px; border-radius: 10px; text-align: center; box-shadow: 0 3px 8px rgba(0,0,0,0.08); transition: transform 0.2s; border-top: 4px solid #1e88e5; display: flex; flex-direction: column; justify-content: space-between; }
         .card-item:hover { transform: translateY(-4px); }
         .card-item h3 { color: #0f4c81; font-size: 1.2rem; margin-bottom: 8px; }
         .badge { display: inline-block; background: #e3f2fd; color: #0f4c81; padding: 4px 12px; border-radius: 15px; font-size: 0.85rem; font-weight: bold; margin-bottom: 15px; }
 
-        /* Chapter & Test List Items */
         .chapter-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; margin-top: 20px; }
         .chapter-item { background: #f8fafc; padding: 16px; border-radius: 8px; border: 1px solid #cbd5e1; display: flex; flex-direction: column; justify-content: space-between; text-align: left; }
         .chapter-item h4 { color: #0f4c81; font-size: 1.05rem; margin-bottom: 6px; }
@@ -37,7 +33,6 @@
         .status-live { color: #16a34a; font-size: 0.85rem; font-weight: bold; display: block; margin-bottom: 10px; }
         .status-soon { color: #64748b; font-size: 0.8rem; display: block; margin-bottom: 10px; }
 
-        /* Buttons */
         button { cursor: pointer; border: none; border-radius: 6px; padding: 10px 16px; font-size: 0.95rem; font-weight: 600; transition: 0.2s; width: 100%; }
         .btn-primary { background: #1e88e5; color: white; }
         .btn-primary:hover { background: #0f4c81; }
@@ -60,16 +55,27 @@
     </header>
 
     <main class="container">
-        <!-- STEP 1: कक्षा चुनें (Class 1 to 10) -->
+        <!-- STEP 1: कक्षा 1 से 10 (सीधे HTML में ताकि तुरंत दिखे) -->
         <section id="class-view">
             <div class="welcome-banner">
                 <h2>अपनी कक्षा चुनें (Select Your Class)</h2>
                 <p>ऑनलाइन टेस्ट देने के लिए नीचे दी गई कक्षाओं में से अपनी कक्षा पर क्लिक करें</p>
             </div>
-            <div class="grid-container" id="classes-container"></div>
+            <div class="grid-container">
+                <div class="card-item"><div><h3>कक्षा 1 (Class 1)</h3><span class="badge">सभी विषय उपलब्ध</span></div><button class="btn-primary" onclick="openClass(1)">विषय देखें →</button></div>
+                <div class="card-item"><div><h3>कक्षा 2 (Class 2)</h3><span class="badge">सभी विषय उपलब्ध</span></div><button class="btn-primary" onclick="openClass(2)">विषय देखें →</button></div>
+                <div class="card-item"><div><h3>कक्षा 3 (Class 3)</h3><span class="badge">सभी विषय उपलब्ध</span></div><button class="btn-primary" onclick="openClass(3)">विषय देखें →</button></div>
+                <div class="card-item"><div><h3>कक्षा 4 (Class 4)</h3><span class="badge">सभी विषय उपलब्ध</span></div><button class="btn-primary" onclick="openClass(4)">विषय देखें →</button></div>
+                <div class="card-item"><div><h3>कक्षा 5 (Class 5)</h3><span class="badge">सभी विषय उपलब्ध</span></div><button class="btn-primary" onclick="openClass(5)">विषय देखें →</button></div>
+                <div class="card-item"><div><h3>कक्षा 6 (Class 6)</h3><span class="badge">सभी विषय उपलब्ध</span></div><button class="btn-primary" onclick="openClass(6)">विषय देखें →</button></div>
+                <div class="card-item"><div><h3>कक्षा 7 (Class 7)</h3><span class="badge">सभी विषय उपलब्ध</span></div><button class="btn-primary" onclick="openClass(7)">विषय देखें →</button></div>
+                <div class="card-item"><div><h3>कक्षा 8 (Class 8)</h3><span class="badge">सभी विषय उपलब्ध</span></div><button class="btn-primary" onclick="openClass(8)">विषय देखें →</button></div>
+                <div class="card-item"><div><h3>कक्षा 9 (Class 9)</h3><span class="badge">सभी विषय उपलब्ध</span></div><button class="btn-primary" onclick="openClass(9)">विषय देखें →</button></div>
+                <div class="card-item"><div><h3>कक्षा 10 (Class 10)</h3><span class="badge">बोर्ड परीक्षा स्पेशल</span></div><button class="btn-primary" onclick="openClass(10)">विषय देखें →</button></div>
+            </div>
         </section>
 
-        <!-- STEP 2: विषय चुनें (Subjects) -->
+        <!-- STEP 2: विषय चुनें -->
         <section id="subject-view" class="hidden">
             <div class="card-box">
                 <button class="btn-back" onclick="showClasses()">← सभी कक्षाओं पर वापस जाएँ</button>
@@ -79,7 +85,7 @@
             </div>
         </section>
 
-        <!-- STEP 3: पाठ चुनें (Chapters) -->
+        <!-- STEP 3: पाठ चुनें -->
         <section id="chapter-view" class="hidden">
             <div class="card-box">
                 <button class="btn-back" onclick="backToSubjects()">← विषयों पर वापस जाएँ</button>
@@ -147,38 +153,3 @@
                 prefix: "c10_sst",
                 chapters: [
                     "इतिहास 1: यूरोप में राष्ट्रवाद का उदय",
-                    "इतिहास 2: भारत में राष्ट्रवाद",
-                    "इतिहास 3: भूमंडलीकृत विश्व का बनना",
-                    "इतिहास 4: औद्योगीकरण का युग",
-                    "इतिहास 5: मुद्रण संस्कृति और आधुनिक दुनिया",
-                    "भूगोल 1: संसाधन एवं विकास",
-                    "भूगोल 2: वन एवं वन्यजीव संसाधन",
-                    "भूगोल 3: जल संसाधन",
-                    "भूगोल 4: कृषि",
-                    "भूगोल 5: खनिज तथा ऊर्जा संसाधन",
-                    "भूगोल 6: विनिर्माण उद्योग",
-                    "भूगोल 7: राष्ट्रीय अर्थव्यवस्था की जीवन रेखाएँ",
-                    "नागरिक शास्त्र 1: सत्ता की साझेदारी",
-                    "नागरिक शास्त्र 2: संघवाद",
-                    "नागरिक शास्त्र 3: जाति, धर्म और लैंगिक मसले",
-                    "नागरिक शास्त्र 4: राजनीतिक दल",
-                    "नागरिक शास्त्र 5: लोकतंत्र के परिणाम",
-                    "अर्थशास्त्र 1: विकास",
-                    "अर्थशास्त्र 2: भारतीय अर्थव्यवस्था के क्षेत्रक",
-                    "अर्थशास्त्र 3: मुद्रा और साख",
-                    "अर्थशास्त्र 4: वैश्वीकरण और भारतीय अर्थव्यवस्था",
-                    "अर्थशास्त्र 5: उपभोक्ता अधिकार"
-                ]
-            },
-            "हिंदी (Hindi)": {
-                prefix: "c10_hin",
-                chapters: [
-                    "गद्य 1: मित्रता (आचार्य रामचंद्र शुक्ल)",
-                    "गद्य 2: ममता (जयशंकर प्रसाद)",
-                    "गद्य 3: भारतीय संस्कृति (डॉ. राजेंद्र प्रसाद)",
-                    "गद्य 4: अजंता (भगवतशरण उपाध्याय)",
-                    "काव्य 1: पद (सूरदास)",
-                    "काव्य 2: धनुष-भंग, वन-पथ पर (तुलसीदास)",
-                    "काव्य 3: सवैये, कवित्त (रसखान)",
-                    "काव्य 4: भक्ति, नीति (बिहारीलाल)",
-                    "काव्य 5: स्वदेश-प्रेम (रामनरेश त्रिपाठी)",
