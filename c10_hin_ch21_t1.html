@@ -1,22 +1,46 @@
-
 <!DOCTYPE html>
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>वाराणसी टेस्ट - NKS Coaching Center</title>
+<title>वाराणसी टेस्ट - NKS Coaching Center (Advanced)</title>
 
 <style>
+:root {
+  --bg-color: #f0f4f8;
+  --card-bg: #fff;
+  --text-color: #1e293b;
+  --primary: #1e88e5;
+  --primary-dark: #0f4c81;
+  --success: #16a34a;
+  --danger: #dc2626;
+  --border: #cbd5e1;
+  --hover-bg: #f8fafc;
+}
+
+[data-theme="dark"] {
+  --bg-color: #0f172a;
+  --card-bg: #1e293b;
+  --text-color: #f8fafc;
+  --primary: #3b82f6;
+  --primary-dark: #60a5fa;
+  --success: #22c55e;
+  --danger: #ef4444;
+  --border: #334155;
+  --hover-bg: #273548;
+}
+
 *{
   box-sizing:border-box;
   margin:0;
   padding:0;
   font-family:sans-serif;
+  transition: background 0.3s, color 0.3s;
 }
 
 body{
-  background:#f0f4f8;
-  color:#1e293b;
+  background: var(--bg-color);
+  color: var(--text-color);
   padding-bottom:30px;
 }
 
@@ -24,12 +48,19 @@ body{
   position:sticky;
   top:0;
   z-index:99;
-  background:#0f4c81;
+  background: var(--primary-dark);
   color:#fff;
   padding:12px 15px;
   display:flex;
   justify-content:space-between;
   align-items:center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.top-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .tmr{
@@ -40,6 +71,16 @@ body{
   font-weight:bold;
 }
 
+.theme-btn {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
 .box{
   max-width:800px;
   margin:15px auto;
@@ -47,10 +88,10 @@ body{
 }
 
 .card{
-  background:#fff;
+  background: var(--card-bg);
   padding:20px;
   border-radius:10px;
-  box-shadow:0 2px 8px rgba(0,0,0,0.08);
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
   margin-bottom:15px;
 }
 
@@ -61,11 +102,17 @@ body{
   padding:11px 18px;
   font-size:0.95rem;
   font-weight:600;
+  transition: transform 0.1s ease, opacity 0.2s;
 }
 
-.bp{background:#1e88e5;color:#fff}
-.bs{background:#16a34a;color:#fff}
-.bg{background:#e2e8f0;color:#333}
+.btn:active {
+  transform: scale(0.98);
+}
+
+.bp{background: var(--primary); color:#fff;}
+.bs{background: var(--success); color:#fff;}
+.bg{background: var(--border); color: var(--text-color);}
+.bw { background: #f59e0b; color: #fff; }
 
 .btn:disabled{
   opacity:0.5;
@@ -76,7 +123,9 @@ body{
   width:100%;
   max-width:320px;
   padding:10px;
-  border:2px solid #cbd5e1;
+  border:2px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text-color);
   border-radius:6px;
   margin:10px 0 15px;
   display:block;
@@ -85,7 +134,7 @@ body{
 
 .qt{
   font-size:1.25rem;
-  color:#0f4c81;
+  color: var(--primary-dark);
   margin:12px 0 15px;
   font-weight:bold;
 }
@@ -94,8 +143,9 @@ body{
   display:block;
   width:100%;
   text-align:left;
-  background:#f8fafc;
-  border:2px solid #cbd5e1;
+  background: var(--hover-bg);
+  border:2px solid var(--border);
+  color: var(--text-color);
   padding:12px;
   border-radius:8px;
   margin-bottom:10px;
@@ -105,9 +155,14 @@ body{
 
 .opt.sel{
   background:#dbeafe;
-  border-color:#1e88e5;
+  border-color: var(--primary);
   font-weight:bold;
   color:#0f4c81;
+}
+
+[data-theme="dark"] .opt.sel {
+  background: #1e3a8a;
+  color: #93c5fd;
 }
 
 .nav{
@@ -124,27 +179,37 @@ body{
   gap:5px;
   margin-top:15px;
   padding-top:12px;
-  border-top:1px solid #e2e8f0;
+  border-top:1px solid var(--border);
+  max-height: 120px;
+  overflow-y: auto;
 }
 
 .pb{
-  width:30px;
-  height:30px;
+  width:32px;
+  height:32px;
   border-radius:4px;
-  border:1px solid #cbd5e1;
-  background:#fff;
+  border:1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text-color);
   cursor:pointer;
   font-size:0.8rem;
+  font-weight: bold;
 }
 
 .pb.dn{
-  background:#16a34a;
+  background: var(--success);
   color:#fff;
-  border-color:#16a34a;
+  border-color: var(--success);
+}
+
+.pb.mk {
+  background: #f59e0b;
+  color: #fff;
+  border-color: #f59e0b;
 }
 
 .pb.ac{
-  border:2px solid #0f4c81;
+  border:2px solid var(--primary-dark);
 }
 
 .sg{
@@ -155,16 +220,17 @@ body{
 }
 
 .sb{
-  background:#f1f5f9;
+  background: var(--hover-bg);
   padding:12px;
   border-radius:8px;
   text-align:center;
+  border: 1px solid var(--border);
 }
 
 .sn{
   font-size:1.4rem;
   font-weight:bold;
-  color:#0f4c81;
+  color: var(--primary-dark);
   display:block;
 }
 
@@ -172,18 +238,18 @@ body{
   padding:12px;
   border-radius:6px;
   margin-bottom:10px;
-  border-left:4px solid #cbd5e1;
-  background:#f8fafc;
+  border-left:4px solid var(--border);
+  background: var(--hover-bg);
 }
 
 .rev.ok{
-  border-left-color:#16a34a;
-  background:#f0fdf4;
+  border-left-color: var(--success);
+  background: rgba(22, 163, 74, 0.05);
 }
 
 .rev.no{
-  border-left-color:#dc2626;
-  background:#fef2f2;
+  border-left-color: var(--danger);
+  background: rgba(220, 38, 38, 0.05);
 }
 
 .mod{
@@ -200,7 +266,8 @@ body{
 }
 
 .mc{
-  background:#fff;
+  background: var(--card-bg);
+  color: var(--text-color);
   padding:22px;
   border-radius:10px;
   max-width:360px;
@@ -212,6 +279,17 @@ body{
   display:none!important;
 }
 
+.history-box {
+  margin-top: 15px;
+  max-height: 150px;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
 @media(max-width:500px){
   .nav .btn{
     flex:1;
@@ -221,606 +299,341 @@ body{
 </style>
 </head>
 
-<body>
+<body data-theme="light">
 
 <div class="bar">
   <div>
     <strong>NKS Coaching Center</strong><br>
     <small>कक्षा 10 हिंदी - पाठ 1: वाराणसी</small>
   </div>
-  <div class="tmr" id="tm">⏱ 10:00</div>
+  <div class="top-controls">
+    <div class="tmr" id="tm">⏱ 10:00</div>
+    <button class="theme-btn" onclick="toggleTheme()">🌙 मोड</button>
+  </div>
 </div>
 
 <div class="box">
 
   <!-- START SCREEN -->
-
   <div id="s1" class="card">
-
-    <h2 style="color:#0f4c81;margin-bottom:8px">
+    <h2 style="color:var(--primary-dark);margin-bottom:8px">
       वाराणसी - संस्कृत शब्दार्थ टेस्ट
     </h2>
-
-    <p style="margin-bottom:12px;color:#475569">
-      कुल प्रश्न: 50 | समय: 10 मिनट |
-      प्रत्येक सही उत्तर: 1 अंक
+    <p style="margin-bottom:12px;color:var(--text-color);opacity:0.8">
+      कुल प्रश्न: 50 | समय: 10 मिनट | प्रत्येक सही उत्तर: 1 अंक
     </p>
 
     <label><strong>अपना नाम लिखें:</strong></label>
+    <input type="text" id="un" class="inp" placeholder="विद्यार्थी का नाम...">
 
-    <input
-      type="text"
-      id="un"
-      class="inp"
-      placeholder="विद्यार्थी का नाम..."
-    >
-
-    <button class="btn bp" onclick="go()">
-      टेस्ट शुरू करें →
-    </button>
-
-    <button class="btn bg" onclick="location.href='index.html'">
-      ← मुख्य पोर्टल
-    </button>
-
+    <div style="display:flex; gap:10px; flex-wrap:wrap;">
+      <button class="btn bp" onclick="go()">टेस्ट शुरू करें →</button>
+      <button class="btn bg" onclick="showHistoryModal()">पिछले स्कोर देखें</button>
+    </div>
   </div>
 
   <!-- TEST SCREEN -->
-
   <div id="s2" class="card hidden">
-
-    <div style="display:flex;justify-content:space-between;color:#64748b;font-size:0.9rem">
+    <div style="display:flex;justify-content:space-between;color:var(--text-color);font-size:0.9rem; opacity:0.8">
       <span id="qc">प्रश्न 1/50</span>
-      <span id="sc">हल: 0</span>
+      <div>
+        <button class="btn bw" style="padding:4px 8px; font-size:0.8rem;" onclick="toggleMark()">⭐ मार्क करें</button>
+        <span id="sc" style="margin-left: 10px;">हल: 0</span>
+      </div>
     </div>
 
     <div class="qt" id="qt"></div>
-
     <div id="ob"></div>
 
     <div class="nav">
-
-      <button class="btn bg" id="pb" onclick="mv(-1)">
-        ← पिछला
-      </button>
-
-      <button class="btn bp" id="nb" onclick="mv(1)">
-        अगला →
-      </button>
-
-      <button class="btn bs" onclick="askSub()">
-        Submit Test
-      </button>
-
+      <button class="btn bg" id="pb" onclick="mv(-1)">← पिछला</button>
+      <button class="btn bp" id="nb" onclick="mv(1)">अगला →</button>
+      <button class="btn bs" onclick="askSub()">Submit Test</button>
     </div>
 
     <div class="pal" id="pl"></div>
-
   </div>
 
   <!-- RESULT SCREEN -->
-
   <div id="s3" class="hidden">
-
     <div class="card" style="text-align:center">
-
-      <h2 style="color:#0f4c81">
-        परीक्षा परिणाम - NKS Coaching Center
-      </h2>
-
-      <p style="margin:6px 0">
-        विद्यार्थी: <strong id="rn"></strong>
-      </p>
+      <h2 style="color:var(--primary-dark)">परीक्षा परिणाम - NKS Coaching Center</h2>
+      <p style="margin:6px 0">विद्यार्थी: <strong id="rn"></strong></p>
 
       <div class="sg">
-
-        <div class="sb">
-          <span class="sn" id="rs">0/50</span>
-          अंक
-        </div>
-
-        <div class="sb">
-          <span class="sn" id="rp">0%</span>
-          प्रतिशत
-        </div>
-
-        <div class="sb" style="background:#dcfce7">
-          <span class="sn" style="color:#16a34a" id="rok">0</span>
-          सही
-        </div>
-
-        <div class="sb" style="background:#fee2e2">
-          <span class="sn" style="color:#dc2626" id="rno">0</span>
-          गलत
-        </div>
-
+        <div class="sb"><span class="sn" id="rs">0/50</span> अंक</div>
+        <div class="sb"><span class="sn" id="rp">0%</span> प्रतिशत</div>
+        <div class="sb" style="background:rgba(22,163,74,0.1)"><span class="sn" style="color:var(--success)" id="rok">0</span> सही</div>
+        <div class="sb" style="background:rgba(220,38,38,0.1)"><span class="sn" style="color:var(--danger)" id="rno">0</span> गलत</div>
       </div>
 
-      <button class="btn bp" onclick="location.reload()">
-        दोबारा टेस्ट दें
-      </button>
-
-      <button class="btn bg" onclick="location.href='index.html'">
-        मुख्य विषय
-      </button>
-
+      <div style="display:flex; justify-content:center; gap:10px; margin-top:15px;">
+        <button class="btn bp" onclick="location.reload()">दबारा टेस्ट दें</button>
+        <button class="btn bg" onclick="showHistoryModal()">स्कोर हिस्ट्री</button>
+      </div>
     </div>
 
     <div class="card">
-      <h3 style="color:#0f4c81;margin-bottom:10px">
-        उत्तर कुंजी (Answer Key)
-      </h3>
-
+      <h3 style="color:var(--primary-dark);margin-bottom:10px">उत्तर कुंजी (Answer Key)</h3>
       <div id="rv"></div>
     </div>
-
   </div>
 
 </div>
 
-<!-- CONFIRMATION POPUP -->
-
+<!-- CONFIRMATION & HISTORY POPUP -->
 <div id="md" class="mod hidden">
-
   <div class="mc">
-
-    <h3 style="color:#0f4c81;margin-bottom:8px">
-      NKS Coaching Center
-    </h3>
-
+    <h3 id="mh" style="color:var(--primary-dark);margin-bottom:8px">NKS Coaching Center</h3>
     <p id="mm" style="margin-bottom:18px"></p>
-
-    <button class="btn bg" id="mc1" onclick="clM()">
-      नहीं
-    </button>
-
-    <button class="btn bs" id="mc2" onclick="end()">
-      हाँ, सबमिट करें
-    </button>
-
+    <div id="historyContainer" class="history-box hidden"></div>
+    <div style="display:flex; justify-content:center; gap:10px;">
+      <button class="btn bg" id="mc1" onclick="clM()">नहीं</button>
+      <button class="btn bs" id="mc2" onclick="end()">हाँ, सबमिट करें</button>
+    </div>
   </div>
-
 </div>
 
 <script>
-
-// ===============================
-// QUESTION DATABASE
-// ===============================
-
 const d=[
-
-["वाराणसी",["बनारस का प्राचीन नाम","प्रयागराज","अयोध्या","मथुरा"],0],
-
-["सुबिख्याता",["अज्ञात","प्रसिद्ध","सुंदर","नया"],1],
-
-["प्राचीननगरी",["नया गाँव","विशाल देश","प्राचीन शहर","आधुनिक नगर"],2],
-
-["इयं",["वह","यह","तुम","हम"],1],
-
-["विमलसलिलतरङ्गाः",["गंदे जल की धारा","निर्मल जल की लहरें","गहरा समुद्र","शांत नदी"],1],
-
-["गङ्गायाः",["गंगा में","गंगा से","गंगा की","गंगा को"],2],
-
-["कूले",["बीच में","किनारे पर","पानी के अंदर","ऊपर"],1],
-
-["स्थिता",["स्थित है","बहती है","चलती है","दिखती है"],0],
-
-["अस्याः",["उसका","इसकी","तुम्हारी","हमारी"],1],
-
-["घटानां",["घड़ों का","घाटों की","मंदिरों की","नावों की"],1],
-
-["वलयाकृतिः",["सीधी रेखा","गोल चक्कर","घुमावदार आकृतिवाली","त्रिकोण"],2],
-
-["पङ्क्तिः",["समूह","पंक्ति","दीवार","सीढ़ी"],1],
-
-["धवलायां",["काली","पीली","सफेद","नीली"],2],
-
-["चन्द्रिकायां",["सूर्य प्रकाश में","चाँदनी में","अंधेरे में","तारों में"],1],
-
-["राजते",["राज्य करता है","शोभा देता है","चलता है","बोलता है"],1],
-
-["अगणिताः",["गिने-चुने","असंख्य","कम","दो-चार"],1],
-
-["सुदूरेभ्यः",["पास से","दूर-दूर से","गाँव से","पड़ोस से"],1],
-
-["नित्यम्",["कभी-कभी","प्रतिदिन","सप्ताह में","रात में"],1],
-
-["अत्र",["वहाँ","यहाँ","कहाँ","जहाँ"],1],
-
-["आयान्ति",["जाते हैं","आते हैं","देखते हैं","रहते हैं"],1],
-
-["विलोक्य",["सुनकर","देखकर","पढ़कर","लिखकर"],1],
-
-["प्रशंसन्ति",["निंदा करते हैं","प्रशंसा करते हैं","पूछते हैं","हँसते हैं"],1],
-
-["गेहे गेहे",["गाँव-गाँव में","घर-घर में","शहर-शहर में","देश-देश में"],1],
-
-["ज्योतिः",["अंधकार","प्रकाश","धुआँ","अग्नि"],1],
-
-["घोतते",["बुझता है","प्रकाशित होता है","छिपता है","गिरता है"],1],
-
-["अधुनापि",["कल भी","आज भी","पहले भी","कभी भी"],1],
-
-["संस्कृतवाग्धारा",["गंगा की धारा","संस्कृत भाषा की धारा","हिंदी साहित्य","ज्ञान की नदी"],1],
-
-["सततम्",["रुक-रुक कर","निरंतर","धीरे-धीरे","तेजी से"],1],
-
-["प्रवहति",["ठहरती है","बहती है","सूखती है","उठती है"],1],
-
-["वर्धयति",["घटाती है","बढ़ाती है","रोकती है","बदलती है"],1],
-
-["मूर्धन्याः",["सामान्य","श्रेष्ठ / प्रमुख","नए","कमजोर"],1],
-
-["वैदिकवाङ्मयस्य",["लौकिक साहित्य का","वैदिक साहित्य का","आधुनिक साहित्य","विदेशी साहित्य"],1],
-
-["अध्ययने-अध्यापने",["पढ़ने-लिखने में","अध्ययन और अध्यापन में","सुनने-बोलने में","आने-जाने में"],1],
-
-["निरताः",["दूर भागे हुए","लगे हुए","सोए हुए","थके हुए"],1],
-
-["अपितु",["इसलिए","बल्कि","क्योंकि","यद्यपि"],1],
-
-["वैदेशिकाः",["देशी लोग","विदेशी","ग्रामीण","व्यापारी"],1],
-
-["गीर्वाणवाण्याः",["हिंदी भाषा की","संस्कृत भाषा की","प्राकृत भाषा की","पाली भाषा की"],1],
-
-["अध्ययनाय",["अध्ययन से","अध्ययन के लिए","अध्ययन में","अध्ययन का"],1],
-
-["निःशुल्कम्",["शुल्क सहित","निःशुल्क","कम शुल्क","अधिक शुल्क"],1],
-
-["गृह्णन्ति",["देते हैं","ग्रहण करते हैं / सीखते हैं","छोड़ते हैं","पूछते हैं"],1],
-
-["त्रयः",["दो","तीन","चार","पाँच"],1],
-
-["सन्ति",["था","हैं","होगा","नहीं है"],1],
-
-["येषु",["जिनसे","जिनमें","जिनको","जिनका"],1],
-
-["केन्द्रस्थलम्",["सीमा स्थल","केंद्रस्थल","तीर्थ स्थल","युद्ध स्थल"],1],
-
-["अस्ति",["हैं (बहुवचन)","है (एकवचन)","थे","होगा"],1],
-
-["आलोकः",["अंधेरा","प्रकाश","संसार","ज्ञान"],1],
-
-["प्रसृतः",["सिमटा हुआ","फैला हुआ","छिपा हुआ","रुका हुआ"],1],
-
-["आगत्य",["जाकर","आकर","बैठकर","पढ़कर"],1],
-
-["अकरोत्",["किया","करता है","करेगा","करो"],0],
-
-["तेषाम्-ज्ञानेन",["उनका और ज्ञान से","हमारा और धन से","तुम्हारा और बल से","इसका और प्रेम से"],0]
-
+  ["वाराणसी",["बनारस का प्राचीन नाम","प्रयागराज","अयोध्या","मथुरा"],0],
+  ["सुबिख्याता",["अज्ञात","प्रसिद्ध","सुंदर","नया"],1],
+  ["प्राचीननगरी",["नया गाँव","विशाल देश","प्राचीन शहर","आधुनिक नगर"],2],
+  ["इयं",["वह","यह","तुम","हम"],1],
+  ["विमलसलिलतरङ्गाः",["गंदे जल की धारा","निर्मल जल की लहरें","गहरा समुद्र","शांत नदी"],1],
+  ["गङ्गायाः",["गंगा में","गंगा से","गंगा की","गंगा को"],2],
+  ["कूले",["बीच में","किनारे पर","पानी के अंदर","ऊपर"],1],
+  ["स्थिता",["स्थित है","बहती है","चलती है","दिखती है"],0],
+  ["अस्याः",["उसका","इसकी","तुम्हारी","हमारी"],1],
+  ["घटानां",["घड़ों का","घाटों की","मंदिरों की","नावों की"],1],
+  ["वलयाकृतिः",["सीधी रेखा","गोल चक्कर","घुमावदार आकृतिवाली","त्रिकोण"],2],
+  ["पङ्क्तिः",["समूह","पंक्ति","दीवार","सीढ़ी"],1],
+  ["धवलायां",["काली","पीली","सफेद","नीली"],2],
+  ["चन्द्रिकायां",["सूर्य प्रकाश में","चाँदनी में","अंधेरे में","तारों में"],1],
+  ["राजते",["राज्य करता है","शोभा देता है","चलता है","बोलता है"],1],
+  ["अगणिताः",["गिने-चुने","असंख्य","कम","दो-चार"],1],
+  ["सुदूरेभ्यः",["पास से","दूर-दूर से","गाँव से","पड़ोस से"],1],
+  ["नित्यम्",["कभी-कभी","प्रतिदिन","सप्ताह में","रात में"],1],
+  ["अत्र",["वहाँ","यहाँ","कहाँ","जहाँ"],1],
+  ["आयान्ति",["जाते हैं","आते हैं","देखते हैं","रहते हैं"],1],
+  ["विलोक्य",["सुनकर","देखकर","पढ़कर","लिखकर"],1],
+  ["प्रशंसन्ति",["निंदा करते हैं","प्रशंसा करते हैं","पूछते हैं","हँसते हैं"],1],
+  ["गेहे गेहे",["गाँव-गाँव में","घर-घर में","शहर-शहर में","देश-देश में"],1],
+  ["ज्योतिः",["अंधकार","प्रकाश","धुआँ","अग्नि"],1],
+  ["घोतते",["बुझता है","प्रकाशित होता है","छिपता है","गिरता है"],1],
+  ["अधुनापि",["कल भी","आज भी","पहले भी","कभी भी"],1],
+  ["संस्कृतवाग्धारा",["गंगा की धारा","संस्कृत भाषा की धारा","हिंदी साहित्य","ज्ञान की नदी"],1],
+  ["सततम्",["रुक-रुक कर","निरंतर","धीरे-धीरे","तेजी से"],1],
+  ["प्रवहति",["ठहरती है","बहती है","सूखती है","उठती है"],1],
+  ["वर्धयति",["घटाती है","बढ़ाती है","रोकती है","बदलती है"],1],
+  ["मूर्धन्याः",["सामान्य","श्रेष्ठ / प्रमुख","नए","कमजोर"],1],
+  ["वैदिकवाङ्मयस्य",["लौकिक साहित्य का","वैदिक साहित्य का","आधुनिक साहित्य","विदेशी साहित्य"],1],
+  ["अध्ययने-अध्यापने",["पढ़ने-लिखने में","अध्ययन और अध्यापन में","सुनने-बोलने में","आने-जाने में"],1],
+  ["निरताः",["दूर भागे हुए","लगे हुए","सोए हुए","थके हुए"],1],
+  ["अपितु",["इसलिए","बल्कि","क्योंकि","यद्यपि"],1],
+  ["वैदेशिकाः",["देशी लोग","विदेशी","ग्रामीण","व्यापारी"],1],
+  ["गीर्वाणवाण्याः",["हिंदी भाषा की","संस्कृत भाषा की","प्राकृत भाषा की","पाली भाषा की"],1],
+  ["अध्ययनाय",["अध्ययन से","अध्ययन के लिए","अध्ययन में","अध्ययन का"],1],
+  ["निःशुल्कम्",["शुल्क सहित","निःशुल्क","कम शुल्क","अधिक शुल्क"],1],
+  ["गृह्णन्ति",["देते हैं","ग्रहण करते हैं / सीखते हैं","छोड़ते हैं","पूछते हैं"],1],
+  ["त्रयः",["दो","तीन","चार","पाँच"],1],
+  ["सन्ति",["था","हैं","होगा","नहीं है"],1],
+  ["येषु",["जिनसे","जिनमें","जिनको","जिनका"],1],
+  ["केन्द्रस्थलम्",["सीमा स्थल","केंद्रस्थल","तीर्थ स्थल","युद्ध स्थल"],1],
+  ["अस्ति",["हैं (बहुवचन)","है (एकवचन)","थे","होगा"],1],
+  ["आलोकः",["अंधेरा","प्रकाश","संसार","ज्ञान"],1],
+  ["प्रसृतः",["सिमटा हुआ","फैला हुआ","छिपा हुआ","रुका हुआ"],1],
+  ["आगत्य",["जाकर","आकर","बैठकर","पढ़कर"],1],
+  ["अकरोत्",["किया","करता है","करेगा","करो"],0],
+  ["तेषाम्-ज्ञानेन",["उनका और ज्ञान से","हमारा और धन से","तुम्हारा और बल से","इसका और प्रेम से"],0]
 ];
 
-// ===============================
-// TEST VARIABLES
-// ===============================
+let qs=[], ix=0, ans=[], marked=[], t=600, ti, submitted=false;
 
-let qs=[];
-let ix=0;
-let ans=[];
-let t=600;
-let ti;
-let submitted=false;
-
-// ===============================
-// START TEST
-// ===============================
+function toggleTheme() {
+  const body = document.body;
+  const currentTheme = body.getAttribute("data-theme");
+  const newTheme = currentTheme === "dark" ? "light" : "dark";
+  body.setAttribute("data-theme", newTheme);
+  document.querySelector(".theme-btn").innerText = newTheme === "dark" ? "☀️ मोड" : "🌙 मोड";
+}
 
 function go(){
-
-  if(!document.getElementById('un').value.trim()){
-
-    document.getElementById('mm').innerText=
-    "कृपया पहले अपना नाम लिखें।";
-
+  const nameVal = document.getElementById('un').value.trim();
+  if(!nameVal){
+    document.getElementById('mh').innerText = "NKS Coaching Center";
+    document.getElementById('mm').innerText = "कृपया पहले अपना नाम लिखें।";
+    document.getElementById('historyContainer').classList.add('hidden');
     document.getElementById('mc1').classList.add('hidden');
-
-    document.getElementById('mc2').innerText="ठीक है";
-    document.getElementById('mc2').onclick=clM;
-
+    document.getElementById('mc2').innerText = "ठीक है";
+    document.getElementById('mc2').onclick = clM;
     document.getElementById('md').classList.remove('hidden');
-
     return;
   }
 
-  submitted=false;
-  ix=0;
-  t=600;
-
-  qs=[...d].sort(()=>Math.random()-0.5);
-
-  ans=new Array(qs.length).fill(null);
+  submitted = false;
+  ix = 0;
+  t = 600;
+  qs = [...d].sort(() => Math.random() - 0.5);
+  ans = new Array(qs.length).fill(null);
+  marked = new Array(qs.length).fill(false);
 
   document.getElementById('s1').classList.add('hidden');
   document.getElementById('s2').classList.remove('hidden');
 
-  const p=document.getElementById('pl');
-  p.innerHTML="";
-
-  qs.forEach((_,i)=>{
-
-    p.innerHTML+=`
-      <button class="pb" id="p${i}"
-      onclick="ix=${i};ld()">
-      ${i+1}
-      </button>
-    `;
-
+  const p = document.getElementById('pl');
+  p.innerHTML = "";
+  qs.forEach((_, i) => {
+    p.innerHTML += `<button class="pb" id="p${i}" onclick="ix=${i};ld()">${i+1}</button>`;
   });
 
   ld();
 
-  ti=setInterval(()=>{
-
+  ti = setInterval(() => {
     t--;
-
-    document.getElementById('tm').innerText=
-    `⏱ ${String(Math.floor(t/60)).padStart(2,'0')}:${String(t%60).padStart(2,'0')}`;
-
-    if(t<=0){
+    document.getElementById('tm').innerText = `⏱ ${String(Math.floor(t/60)).padStart(2,'0')}:${String(t%60).padStart(2,'0')}`;
+    if(t <= 0){
       clearInterval(ti);
       end();
     }
-
-  },1000);
-
+  }, 1000);
 }
-
-// ===============================
-// LOAD QUESTION
-// ===============================
 
 function ld(){
+  const q = qs[ix];
+  document.getElementById('qc').innerText = `प्रश्न ${ix+1}/${qs.length}`;
+  document.getElementById('sc').innerText = `हल: ${ans.filter(x => x !== null).length}`;
+  document.getElementById('qt').innerText = `${ix+1}. ‘${q[0]}’ शब्द का सही हिंदी अर्थ क्या है?`;
 
-  const q=qs[ix];
-
-  document.getElementById('qc').innerText=
-  `प्रश्न ${ix+1}/${qs.length}`;
-
-  document.getElementById('sc').innerText=
-  `हल: ${ans.filter(x=>x!==null).length}`;
-
-  document.getElementById('qt').innerText=
-  `${ix+1}. ‘${q[0]}’ शब्द का सही हिंदी अर्थ क्या है?`;
-
-  const ob=document.getElementById('ob');
-  ob.innerHTML="";
-
-  q[1].forEach((o,i)=>{
-
-    ob.innerHTML+=`
-      <button class="opt ${ans[ix]===i?'sel':''}"
-      onclick="ans[${ix}]=${i};ld()">
-      ${['A','B','C','D'][i]}. ${o}
-      </button>
-    `;
-
+  const ob = document.getElementById('ob');
+  ob.innerHTML = "";
+  q[1].forEach((o, i) => {
+    ob.innerHTML += `<button class="opt ${ans[ix] === i ? 'sel' : ''}" onclick="ans[${ix}] = ${i}; ld()">${['A','B','C','D'][i]}. ${o}</button>`;
   });
 
-  document.getElementById('pb').disabled=(ix===0);
+  document.getElementById('pb').disabled = (ix === 0);
+  document.getElementById('nb').disabled = (ix === qs.length - 1);
 
-  document.getElementById('nb').disabled=
-  (ix===qs.length-1);
-
-  qs.forEach((_,i)=>{
-
-    document.getElementById('p'+i).className=
-    'pb'+
-    (ans[i]!==null?' dn':'')+
-    (i===ix?' ac':'');
-
+  qs.forEach((_, i) => {
+    let cls = 'pb';
+    if(ans[i] !== null) cls += ' dn';
+    if(marked[i]) cls += ' mk';
+    if(i === ix) cls += ' ac';
+    document.getElementById('p'+i).className = cls;
   });
-
 }
-
-// ===============================
-// NEXT / PREVIOUS
-// ===============================
 
 function mv(step){
-
-  const next=ix+step;
-
-  if(next>=0 && next<qs.length){
-
-    ix=next;
+  const next = ix + step;
+  if(next >= 0 && next < qs.length){
+    ix = next;
     ld();
-
   }
-
 }
 
-// ===============================
-// SUBMIT CONFIRMATION
-// ===============================
+function toggleMark() {
+  marked[ix] = !marked[ix];
+  ld();
+}
 
 function askSub(){
-
-  const done=ans.filter(x=>x!==null).length;
-
-  document.getElementById('mm').innerText=
-  `आपने ${done}/${qs.length} प्रश्न हल किए हैं। क्या आप टेस्ट सबमिट करना चाहते हैं?`;
-
+  const done = ans.filter(x => x !== null).length;
+  document.getElementById('mh').innerText = "NKS Coaching Center";
+  document.getElementById('mm').innerText = `आपने ${done}/${qs.length} प्रश्न हल किए हैं। क्या आप टेस्ट सबमिट करना चाहते हैं?`;
+  document.getElementById('historyContainer').classList.add('hidden');
   document.getElementById('mc1').classList.remove('hidden');
-
-  document.getElementById('mc1').innerText=
-  'नहीं, वापस जाएँ';
-
-  document.getElementById('mc1').onclick=clM;
-
-  document.getElementById('mc2').innerText=
-  'हाँ, सबमिट करें';
-
-  document.getElementById('mc2').onclick=end;
-
+  document.getElementById('mc1').innerText = 'नहीं, वापस जाएँ';
+  document.getElementById('mc1').onclick = clM;
+  document.getElementById('mc2').innerText = 'हाँ, सबमिट करें';
+  document.getElementById('mc2').onclick = end;
   document.getElementById('md').classList.remove('hidden');
-
 }
 
-// ===============================
-// CLOSE POPUP
-// ===============================
+function showHistoryModal() {
+  const history = JSON.parse(localStorage.getItem('nks_varanasi_results') || '[]');
+  document.getElementById('mh').innerText = "पिछले परीक्षा परिणाम";
+  
+  const histContainer = document.getElementById('historyContainer');
+  histContainer.classList.remove('hidden');
+  
+  if(history.length === 0) {
+    histContainer.innerHTML = "<p>कोई पिछلا रिकॉर्ड उपलब्ध नहीं है।</p>";
+  } else {
+    histContainer.innerHTML = history.reverse().map(h => `
+      <div style="border-bottom:1px solid var(--border); padding:5px 0; text-align:left;">
+        <strong>${h.name}</strong> - स्कोर: ${h.score}/${h.total} (${h.percentage}%)<br>
+        <small style="opacity:0.7">${h.date}</small>
+      </div>
+    `).join('');
+  }
+
+  document.getElementById('mm').innerText = "";
+  document.getElementById('mc1').classList.add('hidden');
+  document.getElementById('mc2').innerText = "बंद करें";
+  document.getElementById('mc2').onclick = clM;
+  document.getElementById('md').classList.remove('hidden');
+}
 
 function clM(){
-
   document.getElementById('md').classList.add('hidden');
-
 }
 
-// ===============================
-// FINAL RESULT
-// ===============================
-
 function end(){
-
-  if(submitted || qs.length===0) return;
-
-  submitted=true;
-
+  if(submitted) return;
+  submitted = true;
   clearInterval(ti);
-
   document.getElementById('md').classList.add('hidden');
 
-  const correct=ans.reduce((total,value,i)=>
-    total+(value===qs[i][2]?1:0),0);
+  const correct = ans.reduce((total, value, i) => total + (value === qs[i][2] ? 1 : 0), 0);
+  const attempted = ans.filter(value => value !== null).length;
+  const wrong = attempted - correct;
+  const percent = Math.round((correct / qs.length) * 100);
 
-  const attempted=ans.filter(value=>value!==null).length;
+  document.getElementById('rn').innerText = document.getElementById('un').value.trim();
+  document.getElementById('rs').innerText = `${correct}/${qs.length}`;
+  document.getElementById('rp').innerText = `${percent}%`;
+  document.getElementById('rok').innerText = correct;
+  document.getElementById('rno').innerText = wrong;
 
-  const wrong=attempted-correct;
-
-  const unanswered=qs.length-attempted;
-
-  const percent=Math.round((correct/qs.length)*100);
-
-  document.getElementById('rn').innerText=
-  document.getElementById('un').value.trim();
-
-  document.getElementById('rs').innerText=
-  `${correct}/${qs.length}`;
-
-  document.getElementById('rp').innerText=
-  `${percent}%`;
-
-  document.getElementById('rok').innerText=correct;
-
-  document.getElementById('rno').innerText=wrong;
-
-  const review=document.getElementById('rv');
-
-  review.innerHTML="";
-
-  qs.forEach((q,i)=>{
-
-    const chosen=ans[i];
-
-    const isCorrect=chosen===q[2];
-
-    const status=chosen===null?
-    'उत्तर नहीं दिया':
-    isCorrect?'सही उत्तर':'गलत उत्तर';
-
-    const div=document.createElement('div');
-
-    div.className=
-    `rev ${isCorrect?'ok':chosen===null?'':'no'}`;
-
-    const title=document.createElement('strong');
-
-    title.textContent=
-    `${i+1}. ${q[0]} — ${status}`;
-
-    div.appendChild(title);
-
-    const yourAnswer=document.createElement('p');
-
-    yourAnswer.textContent=
-    `आपका उत्तर: ${
-      chosen===null?
-      'नहीं दिया':
-      `${'ABCD'[chosen]}. ${q[1][chosen]}`
-    }`;
-
-    div.appendChild(yourAnswer);
-
-    const correctAnswer=document.createElement('p');
-
-    correctAnswer.textContent=
-    `सही उत्तर: ${'ABCD'[q[2]]}. ${q[1][q[2]]}`;
-
-    div.appendChild(correctAnswer);
-
+  const review = document.getElementById('rv');
+  review.innerHTML = "";
+  qs.forEach((q, i) => {
+    const chosen = ans[i];
+    const isCorrect = chosen === q[2];
+    const status = chosen === null ? 'उत्तर नहीं दिया' : isCorrect ? 'सही उत्तर' : 'गलत उत्तर';
+    const div = document.createElement('div');
+    div.className = `rev ${isCorrect ? 'ok' : chosen === null ? '' : 'no'}`;
+    div.innerHTML = `
+      <strong>${i+1}. ${q[0]} — ${status}</strong>
+      <p>आपका उत्तर: ${chosen === null ? 'नहीं दिया' : `${'ABCD'[chosen]}. ${q[1][chosen]}`}</p>
+      <p>सही उत्तर: ${'ABCD'[q[2]]}. ${q[1][q[2]]}</p>
+    `;
     review.appendChild(div);
-
   });
 
-  // SAVE RESULT IN LOCAL STORAGE
-
   try{
-
-    const history=JSON.parse(
-      localStorage.getItem('nks_varanasi_results')||'[]'
-    );
-
+    const history = JSON.parse(localStorage.getItem('nks_varanasi_results') || '[]');
     history.push({
-
-      name:document.getElementById('un').value.trim(),
-
-      score:correct,
-
-      total:qs.length,
-
-      percentage:percent,
-
-      attempted:attempted,
-
-      wrong:wrong,
-
-      unanswered:unanswered,
-
-      date:new Date().toLocaleString('hi-IN')
-
+      name: document.getElementById('un').value.trim(),
+      score: correct,
+      total: qs.length,
+      percentage: percent,
+      date: new Date().toLocaleDateString('hi-IN') + ' ' + new Date().toLocaleTimeString('hi-IN', {hour: '2-digit', minute:'2-digit'})
     });
-
-    localStorage.setItem(
-      'nks_varanasi_results',
-      JSON.stringify(history)
-    );
-
+    localStorage.setItem('nks_varanasi_results', JSON.stringify(history));
   }catch(e){
-
     console.log("Result storage unavailable");
-
   }
 
   document.getElementById('s2').classList.add('hidden');
-
   document.getElementById('s3').classList.remove('hidden');
-
-  document.getElementById('tm').innerText='टेस्ट समाप्त';
-
-  window.scrollTo({
-    top:0,
-    behavior:'smooth'
-  });
-
+  document.getElementById('tm').innerText = 'टेस्ट समाप्त';
+  window.scrollTo({top: 0, behavior: 'smooth'});
 }
 
-// ===============================
-// ENTER KEY SUPPORT
-// ===============================
-
-document.getElementById('un').addEventListener(
-  'keydown',
-  function(e){
-
-    if(e.key==='Enter'){
-      go();
-    }
-
-  }
-);
-
+document.getElementById('un').addEventListener('keydown', function(e){
+  if(e.key === 'Enter') go();
+});
 </script>
 
 </body>
