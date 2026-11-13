@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NKS Coaching Center - Class 1 to 10 Online Test</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f0f4f8; color: #333; line-height: 1.6; }
+        .container { max-width: 1050px; margin: 0 auto; padding: 0 15px; }
+
+        /* Header */
+        .navbar { background: linear-gradient(135deg, #0f4c81, #1e88e5); color: white; padding: 24px 0; text-align: center; box-shadow: 0 3px 10px rgba(0,0,0,0.15); }
+        .navbar h1 { font-size: 2.2rem; letter-spacing: 0.5px; }
+        .navbar p { font-size: 1rem; opacity: 0.95; margin-top: 5px; }
+
+        /* Banner & Cards */
+        .welcome-banner { background: white; padding: 18px; margin: 20px 0; border-radius: 10px; text-align: center; border-left: 5px solid #1e88e5; box-shadow: 0 2px 6px rgba(0,0,0,0.06); }
+        .card-box { background: white; padding: 22px; margin: 20px 0; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.08); }
+
+        /* Grids */
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 15px; margin-bottom: 25px; }
+        .card-item { background: white; padding: 20px; border-radius: 10px; text-align: center; box-shadow: 0 3px 8px rgba(0,0,0,0.08); transition: transform 0.2s; border-top: 4px solid #1e88e5; display: flex; flex-direction: column; justify-content: space-between; }
+        .card-item:hover { transform: translateY(-4px); }
+        .card-item h3 { color: #0f4c81; font-size: 1.2rem; margin-bottom: 8px; }
+        .badge { display: inline-block; background: #e3f2fd; color: #0f4c81; padding: 4px 12px; border-radius: 15px; font-size: 0.85rem; font-weight: bold; margin-bottom: 15px; }
+
+        /* Chapter & Test List Items */
+        .chapter-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; margin-top: 20px; }
+        .chapter-item { background: #f8fafc; padding: 16px; border-radius: 8px; border: 1px solid #cbd5e1; display: flex; flex-direction: column; justify-content: space-between; text-align: left; }
+        .chapter-item h4 { color: #0f4c81; font-size: 1.05rem; margin-bottom: 6px; }
+        
+        .test-set-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-top: 20px; }
+        .test-set-card { background: white; padding: 18px; border-radius: 10px; border: 2px solid #e2e8f0; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .test-set-card h3 { color: #0f4c81; margin-bottom: 6px; }
+
+        .status-live { color: #16a34a; font-size: 0.85rem; font-weight: bold; display: block; margin-bottom: 10px; }
+        .status-soon { color: #64748b; font-size: 0.8rem; display: block; margin-bottom: 10px; }
+
+        /* Buttons */
+        button { cursor: pointer; border: none; border-radius: 6px; padding: 10px 16px; font-size: 0.95rem; font-weight: 600; transition: 0.2s; width: 100%; }
+        .btn-primary { background: #1e88e5; color: white; }
+        .btn-primary:hover { background: #0f4c81; }
+        .btn-live { background: #16a34a; color: white; }
+        .btn-live:hover { background: #15803d; }
+        .btn-soon { background: #e2e8f0; color: #475569; }
+        .btn-back { background: #0f4c81; color: white; width: auto; padding: 8px 18px; margin-bottom: 15px; display: inline-block; }
+
+        .hidden { display: none !important; }
+        footer { text-align: center; padding: 20px; color: #64748b; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <h1>NKS Coaching Center</h1>
+            <p>कक्षा 1 से 10 तक - ऑनलाइन चैप्टर-वाइज टेस्ट सीरीज</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- STEP 1: कक्षा चुनें (Class 1 to 10) -->
+        <section id="class-view">
+            <div class="welcome-banner">
+                <h2>अपनी कक्षा चुनें (Select Your Class)</h2>
+                <p>ऑनलाइन टेस्ट देने के लिए नीचे दी गई कक्षाओं में से अपनी कक्षा पर क्लिक करें</p>
+            </div>
+            <div class="grid-container" id="classes-container"></div>
+        </section>
+
+        <!-- STEP 2: विषय चुनें (Subjects) -->
+        <section id="subject-view" class="hidden">
+            <div class="card-box">
+                <button class="btn-back" onclick="showClasses()">← सभी कक्षाओं पर वापस जाएँ</button>
+                <h2 id="selected-class-title" style="color: #0f4c81;">कक्षा का नाम</h2>
+                <p style="color: #64748b; margin-bottom: 10px;">अपना विषय चुनें:</p>
+                <div class="grid-container" id="subjects-container"></div>
+            </div>
+        </section>
+
+        <!-- STEP 3: पाठ चुनें (Chapters) -->
+        <section id="chapter-view" class="hidden">
+            <div class="card-box">
+                <button class="btn-back" onclick="backToSubjects()">← विषयों पर वापस जाएँ</button>
+                <h2 id="selected-subject-title" style="color: #0f4c81;">विषय का नाम</h2>
+                <p style="color: #64748b;">नीचे दिए गए पाठों (Chapters) में से किसी एक को चुनें:</p>
+                <div class="chapter-grid" id="chapters-container"></div>
+            </div>
+        </section>
+
+        <!-- STEP 4: टेस्ट सेट चुनें (Test 1 से Test 5) -->
+        <section id="testset-view" class="hidden">
+            <div class="card-box">
+                <button class="btn-back" onclick="backToChapters()">← पाठों (Chapters) पर वापस जाएँ</button>
+                <h2 id="selected-chapter-title" style="color: #0f4c81;">पाठ का नाम</h2>
+                <p style="color: #64748b;">इस पाठ के लिए नीचे दिए गए 5 प्रैक्टिस टेस्ट में से किसी एक को चुनें:</p>
+                <div class="test-set-grid" id="testsets-container"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 NKS Coaching Center. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const class10Data = {
+            "गणित (Mathematics)": {
+                prefix: "c10_math",
+                chapters: [
+                    "पाठ 1: वास्तविक संख्याएँ (Real Numbers)",
+                    "पाठ 2: बहुपद (Polynomials)",
+                    "पाठ 3: दो चर वाले रैखिक समीकरण युग्म",
+                    "पाठ 4: द्विघात समीकरण (Quadratic Equations)",
+                    "पाठ 5: समांतर श्रेढ़ियाँ (Arithmetic Progressions)",
+                    "पाठ 6: त्रिभुज (Triangles)",
+                    "पाठ 7: निर्देशांक ज्यामिति (Coordinate Geometry)",
+                    "पाठ 8: त्रिकोणमिति का परिचय (Trigonometry)",
+                    "पाठ 9: त्रिकोणमिति के कुछ अनुप्रयोग",
+                    "पाठ 10: वृत्त (Circles)",
+                    "पाठ 11: वृत्तों से संबंधित क्षेत्रफल",
+                    "पाठ 12: पृष्ठीय क्षेत्रफल और आयतन",
+                    "पाठ 13: सांख्यिकी (Statistics)",
+                    "पाठ 14: प्रायिकता (Probability)"
+                ]
+            },
+            "विज्ञान (Science)": {
+                prefix: "c10_sci",
+                chapters: [
+                    "पाठ 1: रासायनिक अभिक्रियाएँ एवं समीकरण",
+                    "पाठ 2: अम्ल, क्षारक एवं लवण",
+                    "पाठ 3: धातु एवं अधातु",
+                    "पाठ 4: कार्बन एवं उसके यौगिक",
+                    "पाठ 5: जैव प्रक्रम (Life Processes)",
+                    "पाठ 6: नियंत्रण एवं समन्वय",
+                    "पाठ 7: जीव जनन कैसे करते हैं",
+                    "पाठ 8: आनुवंशिकता (Heredity)",
+                    "पाठ 9: प्रकाश - परावर्तन तथा अपवर्तन",
+                    "पाठ 10: मानव नेत्र तथा रंगबिरंगा संसार",
+                    "पाठ 11: विद्युत (Electricity)",
+                    "पाठ 12: विद्युत धारा के चुंबकीय प्रभाव",
+                    "पाठ 13: हमारा पर्यावरण (Our Environment)"
+                ]
+            },
+            "सामाजिक विज्ञान (Social Science)": {
+                prefix: "c10_sst",
+                chapters: [
+                    "इतिहास 1: यूरोप में राष्ट्रवाद का उदय",
+                    "इतिहास 2: भारत में राष्ट्रवाद",
+                    "इतिहास 3: भूमंडलीकृत विश्व का बनना",
+                    "इतिहास 4: औद्योगीकरण का युग",
+                    "इतिहास 5: मुद्रण संस्कृति और आधुनिक दुनिया",
+                    "भूगोल 1: संसाधन एवं विकास",
+                    "भूगोल 2: वन एवं वन्यजीव संसाधन",
+                    "भूगोल 3: जल संसाधन",
+                    "भूगोल 4: कृषि",
+                    "भूगोल 5: खनिज तथा ऊर्जा संसाधन",
+                    "भूगोल 6: विनिर्माण उद्योग",
+                    "भूगोल 7: राष्ट्रीय अर्थव्यवस्था की जीवन रेखाएँ",
+                    "नागरिक शास्त्र 1: सत्ता की साझेदारी",
+                    "नागरिक शास्त्र 2: संघवाद",
+                    "नागरिक शास्त्र 3: जाति, धर्म और लैंगिक मसले",
+                    "नागरिक शास्त्र 4: राजनीतिक दल",
+                    "नागरिक शास्त्र 5: लोकतंत्र के परिणाम",
+                    "अर्थशास्त्र 1: विकास",
+                    "अर्थशास्त्र 2: भारतीय अर्थव्यवस्था के क्षेत्रक",
+                    "अर्थशास्त्र 3: मुद्रा और साख",
+                    "अर्थशास्त्र 4: वैश्वीकरण और भारतीय अर्थव्यवस्था",
+                    "अर्थशास्त्र 5: उपभोक्ता अधिकार"
+                ]
+            },
+            "हिंदी (Hindi)": {
+                prefix: "c10_hin",
+                chapters: [
+                    "गद्य 1: मित्रता (आचार्य रामचंद्र शुक्ल)",
+                    "गद्य 2: ममता (जयशंकर प्रसाद)",
+                    "गद्य 3: भारतीय संस्कृति (डॉ. राजेंद्र प्रसाद)",
+                    "गद्य 4: अजंता (भगवतशरण उपाध्याय)",
+                    "काव्य 1: पद (सूरदास)",
+                    "काव्य 2: धनुष-भंग, वन-पथ पर (तुलसीदास)",
+                    "काव्य 3: सवैये, कवित्त (रसखान)",
+                    "काव्य 4: भक्ति, नीति (बिहारीलाल)",
+                    "काव्य 5: स्वदेश-प्रेम (रामनरेश त्रिपाठी)",
