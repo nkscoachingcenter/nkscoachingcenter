@@ -1,155 +1,165 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NKS Coaching Center - Class 1 to 10 Online Test</title>
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #f0f4f8; color: #333; line-height: 1.6; }
-        .container { max-width: 1050px; margin: 0 auto; padding: 0 15px; }
-
-        .navbar { background: linear-gradient(135deg, #0f4c81, #1e88e5); color: white; padding: 24px 0; text-align: center; box-shadow: 0 3px 10px rgba(0,0,0,0.15); }
-        .navbar h1 { font-size: 2.2rem; letter-spacing: 0.5px; }
-        .navbar p { font-size: 1rem; opacity: 0.95; margin-top: 5px; }
-
-        .welcome-banner { background: white; padding: 18px; margin: 20px 0; border-radius: 10px; text-align: center; border-left: 5px solid #1e88e5; box-shadow: 0 2px 6px rgba(0,0,0,0.06); }
-        .card-box { background: white; padding: 22px; margin: 20px 0; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.08); }
-
-        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; margin-top: 15px; margin-bottom: 25px; }
-        .card-item { background: white; padding: 20px; border-radius: 10px; text-align: center; box-shadow: 0 3px 8px rgba(0,0,0,0.08); transition: transform 0.2s; border-top: 4px solid #1e88e5; display: flex; flex-direction: column; justify-content: space-between; }
-        .card-item:hover { transform: translateY(-4px); }
-        .card-item h3 { color: #0f4c81; font-size: 1.2rem; margin-bottom: 8px; }
-        .badge { display: inline-block; background: #e3f2fd; color: #0f4c81; padding: 4px 12px; border-radius: 15px; font-size: 0.85rem; font-weight: bold; margin-bottom: 15px; }
-
-        .chapter-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; margin-top: 20px; }
-        .chapter-item { background: #f8fafc; padding: 16px; border-radius: 8px; border: 1px solid #cbd5e1; display: flex; flex-direction: column; justify-content: space-between; text-align: left; }
-        .chapter-item h4 { color: #0f4c81; font-size: 1.05rem; margin-bottom: 6px; }
-        
-        .test-set-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-top: 20px; }
-        .test-set-card { background: white; padding: 18px; border-radius: 10px; border: 2px solid #e2e8f0; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        .test-set-card h3 { color: #0f4c81; margin-bottom: 6px; }
-
-        .status-live { color: #16a34a; font-size: 0.85rem; font-weight: bold; display: block; margin-bottom: 10px; }
-        .status-soon { color: #64748b; font-size: 0.8rem; display: block; margin-bottom: 10px; }
-
-        button { cursor: pointer; border: none; border-radius: 6px; padding: 10px 16px; font-size: 0.95rem; font-weight: 600; transition: 0.2s; width: 100%; }
-        .btn-primary { background: #1e88e5; color: white; }
-        .btn-primary:hover { background: #0f4c81; }
-        .btn-live { background: #16a34a; color: white; }
-        .btn-live:hover { background: #15803d; }
-        .btn-soon { background: #e2e8f0; color: #475569; }
-        .btn-back { background: #0f4c81; color: white; width: auto; padding: 8px 18px; margin-bottom: 15px; display: inline-block; }
-
-        .hidden { display: none !important; }
-        footer { text-align: center; padding: 20px; color: #64748b; font-size: 0.9rem; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NKS Coaching Center</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:sans-serif}
+body{background:#f0f4f8;color:#333;line-height:1.5}
+.container{max-width:1000px;margin:0 auto;padding:0 15px}
+.navbar{background:linear-gradient(135deg,#0f4c81,#1e88e5);color:#fff;padding:22px 0;text-align:center}
+.navbar h1{font-size:2rem}
+.banner,.card-box{background:#fff;padding:20px;margin:20px 0;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.08)}
+.banner{text-align:center;border-left:5px solid #1e88e5}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:15px;margin-top:15px}
+.card{background:#fff;padding:18px;border-radius:10px;text-align:center;box-shadow:0 2px 6px rgba(0,0,0,0.08);border-top:4px solid #1e88e5;display:flex;flex-direction:column;justify-content:space-between}
+.card h3{color:#0f4c81;margin-bottom:8px;font-size:1.1rem}
+.badge{display:inline-block;background:#e3f2fd;color:#0f4c81;padding:3px 10px;border-radius:12px;font-size:0.8rem;font-weight:bold;margin-bottom:12px}
+.ch-item{background:#f8fafc;padding:15px;border-radius:8px;border:1px solid #cbd5e1;text-align:left;display:flex;flex-direction:column;justify-content:space-between}
+.ch-item h4{color:#0f4c81;margin-bottom:6px;font-size:1rem}
+.live{color:#16a34a;font-size:0.8rem;font-weight:bold;display:block;margin-bottom:8px}
+.soon{color:#64748b;font-size:0.8rem;display:block;margin-bottom:8px}
+button{cursor:pointer;border:none;border-radius:6px;padding:10px;font-size:0.9rem;font-weight:600;width:100%}
+.btn-p{background:#1e88e5;color:#fff}
+.btn-l{background:#16a34a;color:#fff}
+.btn-s{background:#e2e8f0;color:#475569}
+.btn-b{background:#0f4c81;color:#fff;width:auto;padding:8px 16px;margin-bottom:15px}
+.hidden{display:none!important}
+footer{text-align:center;padding:20px;color:#64748b;font-size:0.85rem}
+</style>
 </head>
 <body>
 
-    <header class="navbar">
-        <div class="container">
-            <h1>NKS Coaching Center</h1>
-            <p>कक्षा 1 से 10 तक - ऑनलाइन चैप्टर-वाइज टेस्ट सीरीज</p>
-        </div>
-    </header>
+<header class="navbar">
+  <div class="container">
+    <h1>NKS Coaching Center</h1>
+    <p>कक्षा 1 से 10 तक - ऑनलाइन चैप्टर-वाइज टेस्ट सीरीज</p>
+  </div>
+</header>
 
-    <main class="container">
-        <!-- STEP 1: कक्षा 1 से 10 (सीधे HTML में ताकि तुरंत दिखे) -->
-        <section id="class-view">
-            <div class="welcome-banner">
-                <h2>अपनी कक्षा चुनें (Select Your Class)</h2>
-                <p>ऑनलाइन टेस्ट देने के लिए नीचे दी गई कक्षाओं में से अपनी कक्षा पर क्लिक करें</p>
-            </div>
-            <div class="grid-container">
-                <div class="card-item"><div><h3>कक्षा 1 (Class 1)</h3><span class="badge">सभी विषय उपलब्ध</span></div><button class="btn-primary" onclick="openClass(1)">विषय देखें →</button></div>
-                <div class="card-item"><div><h3>कक्षा 2 (Class 2)</h3><span class="badge">सभी विषय उपलब्ध</span></div><button class="btn-primary" onclick="openClass(2)">विषय देखें →</button></div>
-                <div class="card-item"><div><h3>कक्षा 3 (Class 3)</h3><span class="badge">सभी विषय उपलब्ध</span></div><button class="btn-primary" onclick="openClass(3)">विषय देखें →</button></div>
-                <div class="card-item"><div><h3>कक्षा 4 (Class 4)</h3><span class="badge">सभी विषय उपलब्ध</span></div><button class="btn-primary" onclick="openClass(4)">विषय देखें →</button></div>
-                <div class="card-item"><div><h3>कक्षा 5 (Class 5)</h3><span class="badge">सभी विषय उपलब्ध</span></div><button class="btn-primary" onclick="openClass(5)">विषय देखें →</button></div>
-                <div class="card-item"><div><h3>कक्षा 6 (Class 6)</h3><span class="badge">सभी विषय उपलब्ध</span></div><button class="btn-primary" onclick="openClass(6)">विषय देखें →</button></div>
-                <div class="card-item"><div><h3>कक्षा 7 (Class 7)</h3><span class="badge">सभी विषय उपलब्ध</span></div><button class="btn-primary" onclick="openClass(7)">विषय देखें →</button></div>
-                <div class="card-item"><div><h3>कक्षा 8 (Class 8)</h3><span class="badge">सभी विषय उपलब्ध</span></div><button class="btn-primary" onclick="openClass(8)">विषय देखें →</button></div>
-                <div class="card-item"><div><h3>कक्षा 9 (Class 9)</h3><span class="badge">सभी विषय उपलब्ध</span></div><button class="btn-primary" onclick="openClass(9)">विषय देखें →</button></div>
-                <div class="card-item"><div><h3>कक्षा 10 (Class 10)</h3><span class="badge">बोर्ड परीक्षा स्पेशल</span></div><button class="btn-primary" onclick="openClass(10)">विषय देखें →</button></div>
-            </div>
-        </section>
+<main class="container">
+  <section id="v1">
+    <div class="banner">
+      <h2>अपनी कक्षा चुनें (Select Your Class)</h2>
+      <p>टेस्ट देने के लिए नीचे दी गई कक्षाओं में से अपनी कक्षा चुनें</p>
+    </div>
+    <div class="grid" id="c-grid"></div>
+  </section>
 
-        <!-- STEP 2: विषय चुनें -->
-        <section id="subject-view" class="hidden">
-            <div class="card-box">
-                <button class="btn-back" onclick="showClasses()">← सभी कक्षाओं पर वापस जाएँ</button>
-                <h2 id="selected-class-title" style="color: #0f4c81;">कक्षा का नाम</h2>
-                <p style="color: #64748b; margin-bottom: 10px;">अपना विषय चुनें:</p>
-                <div class="grid-container" id="subjects-container"></div>
-            </div>
-        </section>
+  <section id="v2" class="hidden">
+    <div class="card-box">
+      <button class="btn-b" onclick="show('v1')">← सभी कक्षाओं पर वापस जाएँ</button>
+      <h2 id="c-title" style="color:#0f4c81"></h2>
+      <div class="grid" id="s-grid"></div>
+    </div>
+  </section>
 
-        <!-- STEP 3: पाठ चुनें -->
-        <section id="chapter-view" class="hidden">
-            <div class="card-box">
-                <button class="btn-back" onclick="backToSubjects()">← विषयों पर वापस जाएँ</button>
-                <h2 id="selected-subject-title" style="color: #0f4c81;">विषय का नाम</h2>
-                <p style="color: #64748b;">नीचे दिए गए पाठों (Chapters) में से किसी एक को चुनें:</p>
-                <div class="chapter-grid" id="chapters-container"></div>
-            </div>
-        </section>
+  <section id="v3" class="hidden">
+    <div class="card-box">
+      <button class="btn-b" id="back-sub">← विषयों पर वापस जाएँ</button>
+      <h2 id="s-title" style="color:#0f4c81"></h2>
+      <div class="grid" id="ch-grid"></div>
+    </div>
+  </section>
 
-        <!-- STEP 4: टेस्ट सेट चुनें (Test 1 से Test 5) -->
-        <section id="testset-view" class="hidden">
-            <div class="card-box">
-                <button class="btn-back" onclick="backToChapters()">← पाठों (Chapters) पर वापस जाएँ</button>
-                <h2 id="selected-chapter-title" style="color: #0f4c81;">पाठ का नाम</h2>
-                <p style="color: #64748b;">इस पाठ के लिए नीचे दिए गए 5 प्रैक्टिस टेस्ट में से किसी एक को चुनें:</p>
-                <div class="test-set-grid" id="testsets-container"></div>
-            </div>
-        </section>
-    </main>
+  <section id="v4" class="hidden">
+    <div class="card-box">
+      <button class="btn-b" id="back-ch">← पाठों पर वापस जाएँ</button>
+      <h2 id="ch-title" style="color:#0f4c81"></h2>
+      <div class="grid" id="t-grid"></div>
+    </div>
+  </section>
+</main>
 
-    <footer>
-        <p>© 2026 NKS Coaching Center. All Rights Reserved.</p>
-    </footer>
+<footer><p>© 2026 NKS Coaching Center. All Rights Reserved.</p></footer>
 
-    <script>
-        const class10Data = {
-            "गणित (Mathematics)": {
-                prefix: "c10_math",
-                chapters: [
-                    "पाठ 1: वास्तविक संख्याएँ (Real Numbers)",
-                    "पाठ 2: बहुपद (Polynomials)",
-                    "पाठ 3: दो चर वाले रैखिक समीकरण युग्म",
-                    "पाठ 4: द्विघात समीकरण (Quadratic Equations)",
-                    "पाठ 5: समांतर श्रेढ़ियाँ (Arithmetic Progressions)",
-                    "पाठ 6: त्रिभुज (Triangles)",
-                    "पाठ 7: निर्देशांक ज्यामिति (Coordinate Geometry)",
-                    "पाठ 8: त्रिकोणमिति का परिचय (Trigonometry)",
-                    "पाठ 9: त्रिकोणमिति के कुछ अनुप्रयोग",
-                    "पाठ 10: वृत्त (Circles)",
-                    "पाठ 11: वृत्तों से संबंधित क्षेत्रफल",
-                    "पाठ 12: पृष्ठीय क्षेत्रफल और आयतन",
-                    "पाठ 13: सांख्यिकी (Statistics)",
-                    "पाठ 14: प्रायिकता (Probability)"
-                ]
-            },
-            "विज्ञान (Science)": {
-                prefix: "c10_sci",
-                chapters: [
-                    "पाठ 1: रासायनिक अभिक्रियाएँ एवं समीकरण",
-                    "पाठ 2: अम्ल, क्षारक एवं लवण",
-                    "पाठ 3: धातु एवं अधातु",
-                    "पाठ 4: कार्बन एवं उसके यौगिक",
-                    "पाठ 5: जैव प्रक्रम (Life Processes)",
-                    "पाठ 6: नियंत्रण एवं समन्वय",
-                    "पाठ 7: जीव जनन कैसे करते हैं",
-                    "पाठ 8: आनुवंशिकता (Heredity)",
-                    "पाठ 9: प्रकाश - परावर्तन तथा अपवर्तन",
-                    "पाठ 10: मानव नेत्र तथा रंगबिरंगा संसार",
-                    "पाठ 11: विद्युत (Electricity)",
-                    "पाठ 12: विद्युत धारा के चुंबकीय प्रभाव",
-                    "पाठ 13: हमारा पर्यावरण (Our Environment)"
-                ]
-            },
-            "सामाजिक विज्ञान (Social Science)": {
-                prefix: "c10_sst",
-                chapters: [
-                    "इतिहास 1: यूरोप में राष्ट्रवाद का उदय",
+<script>
+const c10 = {
+  "गणित (Maths)": { p: "c10_math", ch: ["1. वास्तविक संख्याएँ","2. बहुपद","3. दो चर वाले रैखिक समीकरण","4. द्विघात समीकरण","5. समांतर श्रेढ़ियाँ","6. त्रिभुज","7. निर्देशांक ज्यामिति","8. त्रिकोणमिति का परिचय","9. त्रिकोणमिति के अनुप्रयोग","10. वृत्त","11. वृत्तों से संबंधित क्षेत्रफल","12. पृष्ठीय क्षेत्रफल और आयतन","13. सांख्यिकी","14. प्रायिकता"] },
+  "विज्ञान (Science)": { p: "c10_sci", ch: ["1. रासायनिक अभिक्रियाएँ","2. अम्ल, क्षारक एवं लवण","3. धातु एवं अधातु","4. कार्बन एवं यौगिक","5. जैव प्रक्रम","6. नियंत्रण एवं समन्वय","7. जीव जनन कैसे करते हैं","8. आनुवंशिकता","9. प्रकाश - परावर्तन व अपवर्तन","10. मानव नेत्र","11. विद्युत","12. विद्युत धारा के चुंबकीय प्रभाव","13. हमारा पर्यावरण"] },
+  "सामाजिक विज्ञान (SST)": { p: "c10_sst", ch: ["इतिहास 1: यूरोप में राष्ट्रवाद","इतिहास 2: भारत में राष्ट्रवाद","इतिहास 3: भूमंडलीकृत विश्व","इतिहास 4: औद्योगीकरण का युग","इतिहास 5: मुद्रण संस्कृति","भूगोल 1: संसाधन एवं विकास","भूगोल 2: वन एवं वन्यजीव","भूगोल 3: जल संसाधन","भूगोल 4: कृषि","भूगोल 5: खनिज व ऊर्जा","भूगोल 6: विनिर्माण उद्योग","भूगोल 7: राष्ट्रीय अर्थव्यवस्था","नागरिक 1: सत्ता की साझेदारी","नागरिक 2: संघवाद","नागरिक 3: जाति, धर्म और लैंगिक मसले","नागरिक 4: राजनीतिक दल","नागरिक 5: लोकतंत्र के परिणाम","अर्थशास्त्र 1: विकास","अर्थशास्त्र 2: अर्थव्यवस्था के क्षेत्रक","अर्थशास्त्र 3: मुद्रा और साख","अर्थशास्त्र 4: वैश्वीकरण","अर्थशास्त्र 5: उपभोक्ता अधिकार"] },
+  "हिंदी (Hindi)": { p: "c10_hin", ch: ["गद्य 1: मित्रता","गद्य 2: ममता","गद्य 3: भारतीय संस्कृति","गद्य 4: अजंता","काव्य 1: पद (सूरदास)","काव्य 2: धनुष-भंग (तुलसीदास)","काव्य 3: सवैये (रसखान)","काव्य 4: भक्ति नीति (बिहारी)","काव्य 5: स्वदेश-प्रेम","काव्य 6: भारतमाता का मंदिर","संस्कृत खंड: वाराणसी व अन्य","हिंदी व्याकरण: रस, छंद, अलंकार"] },
+  "अंग्रेजी (English)": { p: "c10_eng", ch: ["1. A Letter to God","2. Nelson Mandela","3. Two Stories About Flying","4. From the Diary of Anne Frank","5. Glimpses of India","6. Madam Rides the Bus","7. The Sermon at Benares","8. Poetry Section","9. A Triumph of Surgery","10. The Thief's Story","11. Footprints Without Feet","12. The Necklace & Bholi","13. English Grammar"] },
+  "कला व कंप्यूटर": { p: "c10_art", ch: ["कला 1: आलेखन कला","कला 2: प्राविधिक कला","कला 3: स्मृति चित्रण","कंप्यूटर 1: संचार","कंप्यूटर 2: लिनक्स","कंप्यूटर 3: बाइनरी व गेट्स","कंप्यूटर 4: C प्रोग्रामिंग"] }
+};
+
+const jrSub = [
+  { n: "हिंदी (Hindi)", c: "hin" },
+  { n: "अंग्रेजी (English)", c: "eng" },
+  { n: "गणित (Maths)", c: "math" },
+  { n: "विज्ञान / पर्यावरण", c: "sci" },
+  { n: "सामाजिक विज्ञान / GK", c: "sst" }
+];
+
+// अपने अपलोड किए गए टेस्ट फाइलों के नाम यहाँ जोड़ें (उदाहरण: "c10_sci_ch5_t1.html")
+const uploaded = [
+  // "c10_sci_ch5_t1.html"
+];
+
+function show(id) {
+  ['v1','v2','v3','v4'].forEach(v => document.getElementById(v).classList.add('hidden'));
+  document.getElementById(id).classList.remove('hidden');
+  window.scrollTo(0,0);
+}
+
+const cg = document.getElementById('c-grid');
+for(let i=1; i<=10; i++) {
+  cg.innerHTML += `<div class="card"><div><h3>कक्षा ${i} (Class ${i})</h3><span class="badge">${i===10?'बोर्ड स्पेशल':'सभी विषय'}</span></div><button class="btn-p" onclick="openC(${i})">विषय देखें →</button></div>`;
+}
+
+function openC(c) {
+  document.getElementById('c-title').innerText = `कक्षा ${c} - विषय सूची`;
+  const sg = document.getElementById('s-grid');
+  sg.innerHTML = "";
+  if(c === 10) {
+    Object.keys(c10).forEach(s => {
+      sg.innerHTML += `<div class="card"><div><h3>${s}</h3><span class="badge">${c10[s].ch.length} पाठ</span></div><button class="btn-p" onclick="openCh10('${s}')">पाठ देखें →</button></div>`;
+    });
+  } else {
+    jrSub.forEach(s => {
+      sg.innerHTML += `<div class="card"><div><h3>${s.n}</h3><span class="badge">15 पाठ</span></div><button class="btn-p" onclick="openChJr(${c},'${s.n}','${s.c}')">पाठ देखें →</button></div>`;
+    });
+  }
+  show('v2');
+}
+
+function openCh10(s) {
+  document.getElementById('s-title').innerText = `कक्षा 10 - ${s}`;
+  document.getElementById('back-sub').onclick = () => openC(10);
+  const chg = document.getElementById('ch-grid');
+  chg.innerHTML = "";
+  c10[s].ch.forEach((name, i) => {
+    const code = `${c10[s].p}_ch${i+1}`;
+    chg.innerHTML += `<div class="ch-item"><div><h4>${name}</h4><span class="soon">5 प्रैक्टिस टेस्ट</span></div><button class="btn-p" onclick="openT('${name}','${code}',()=>openCh10('${s}'))">टेस्ट चुनें →</button></div>`;
+  });
+  show('v3');
+}
+
+function openChJr(c, s, code) {
+  document.getElementById('s-title').innerText = `कक्षा ${c} - ${s}`;
+  document.getElementById('back-sub').onclick = () => openC(c);
+  const chg = document.getElementById('ch-grid');
+  chg.innerHTML = "";
+  for(let i=1; i<=15; i++) {
+    const b = `c${c}_${code}_ch${i}`;
+    chg.innerHTML += `<div class="ch-item"><div><h4>पाठ ${i} (Chapter ${i})</h4><span class="soon">5 प्रैक्टिस टेस्ट</span></div><button class="btn-p" onclick="openT('कक्षा ${c} - पाठ ${i}','${b}',()=>openChJr(${c},'${s}','${code}'))">टेस्ट चुनें →</button></div>`;
+  }
+  show('v3');
+}
+
+function openT(title, base, backFn) {
+  document.getElementById('ch-title').innerText = title;
+  document.getElementById('back-ch').onclick = backFn;
+  const tg = document.getElementById('t-grid');
+  tg.innerHTML = "";
+  for(let t=1; t<=5; t++) {
+    const f = `${base}_t${t}.html`;
+    const ok = uploaded.includes(f);
+    tg.innerHTML += `<div class="card"><h3>Test ${t}</h3><span class="${ok?'live':'soon'}">${ok?'● उपलब्ध (Live)':'कोड: '+f}</span>${ok?`<button class="btn-l" onclick="location.href='${f}'">Start Test →</button>`:`<button class="btn-s" onclick="alert('जल्द उपलब्ध होगा!')">Coming Soon</button>`}</div>`;
+  }
+  show('v4');
+}
+</script>
+</body>
+</html>
