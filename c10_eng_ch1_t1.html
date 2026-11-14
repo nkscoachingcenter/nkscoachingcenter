@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A Letter to God - Word Meaning Test | NKS Coaching Center</title>
+<title>A Letter to God - 100 Word Meaning Test | NKS Coaching Center</title>
 
 <style>
 :root {
@@ -304,7 +304,7 @@ body{
 <div class="bar">
   <div>
     <strong>NKS Coaching Center</strong><br>
-    <small>Class 10 English - A Letter to God (Word Meaning Test)</small>
+    <small>Class 10 English - A Letter to God (100 Words Test)</small>
   </div>
   <div class="top-controls">
     <div class="tmr" id="tm">⏱ 15:00</div>
@@ -317,10 +317,10 @@ body{
   <!-- START SCREEN -->
   <div id="s1" class="card">
     <h2 style="color:var(--primary-dark);margin-bottom:8px">
-      A Letter to God - शब्दार्थ टेस्ट (Word Meaning Test)
+      A Letter to God - 100 शब्दार्थ टेस्ट
     </h2>
     <p style="margin-bottom:12px;color:var(--text-color);opacity:0.8">
-      कुल प्रश्न: 64 | समय: 15 मिनट | प्रत्येक सही उत्तर: 1 अंक
+      कुल प्रश्न: 100 | समय: 15 मिनट | प्रत्येक सही उत्तर: 1 अंक
     </p>
 
     <label><strong>विद्यार्थी का नाम लिखें:</strong></label>
@@ -335,7 +335,7 @@ body{
   <!-- TEST SCREEN -->
   <div id="s2" class="card hidden">
     <div style="display:flex;justify-content:space-between;color:var(--text-color);font-size:0.9rem; opacity:0.8">
-      <span id="qc">प्रश्न 1/64</span>
+      <span id="qc">प्रश्न 1/100</span>
       <div>
         <button class="btn bw" style="padding:4px 8px; font-size:0.8rem;" onclick="toggleMark()">⭐ मार्क करें</button>
         <span id="sc" style="margin-left: 10px;">हल: 0</span>
@@ -361,7 +361,7 @@ body{
       <p style="margin:6px 0">विद्यार्थी: <strong id="rn"></strong></p>
 
       <div class="sg">
-        <div class="sb"><span class="sn" id="rs">0/64</span> अंक</div>
+        <div class="sb"><span class="sn" id="rs">0/100</span> अंक</div>
         <div class="sb"><span class="sn" id="rp">0%</span> प्रतिशत</div>
         <div class="sb" style="background:rgba(22,163,74,0.1)"><span class="sn" style="color:var(--success)" id="rok">0</span> सही</div>
         <div class="sb" style="background:rgba(220,38,38,0.1)"><span class="sn" style="color:var(--danger)" id="rno">0</span> गलत</div>
@@ -396,7 +396,7 @@ body{
 
 <script>
 // ===============================
-// QUESTION DATABASE (64 WORDS FROM YOUR LIST)
+// QUESTION DATABASE (ALL 100 WORDS)
 // ===============================
 const d = [
   ["House", ["घर", "पहाड़", "नदी", "खेत"], 0],
@@ -462,7 +462,43 @@ const d = [
   ["Satisfied", ["असंतोषी", "संतुष्ट", "दुखी", "गुस्से में"], 1],
   ["Expression", ["भाव / अभिव्यक्ति", "चुपचाप", "आँसू", "भय"], 0],
   ["Regarded", ["देखा / ध्यान से निहारा", "अनदेखा किया", "भगाया", "तोड़ा"], 0],
-  ["Draped", ["खुला", "ढका हुआ", "कटा हुआ", "सूखा हुआ"], 1]
+  ["Draped", ["खुला", "ढका हुआ", "कटा हुआ", "सूखा हुआ"], 1],
+  ["Curtain", ["दरवाजा", "पर्दा", "दीवार", "खिड़की"], 1],
+  ["Suddenly", ["धीरे-धीरे", "अचानक", "कभी-कभी", "जानबूझकर"], 1],
+  ["Strong", ["कमजोर", "धीमा", "तेज / मजबूत", "छोटा"], 2],
+  ["Wind", ["पानी", "आग", "हवा", "धूल"], 2],
+  ["Blow", ["बहना / फूँक मारना", "रोकना", "सूखना", "जमना"], 0],
+  ["Along With", ["के बिना", "के खिलाफ", "के साथ-साथ", "दूर"], 2],
+  ["Hailstones", ["ओले", "बारिश", "बर्फ के टुकड़े", "पत्थर"], 0],
+  ["Resemble", ["अलग दिखना", "समान दिखाई देना", "छिपाना", "भागना"], 1],
+  ["Silver", ["सोना", "ताँबा", "चाँदी", "लोहा"], 2],
+  ["Exposing", ["छिपाते हुए", "सामने लाते हुए", "बचाते हुए", "भगाते हुए"], 1],
+  ["Collect", ["फेकना", "बाँटना", "इकट्ठा करना", "तोड़ना"], 2],
+  ["Frozen", ["पिघला हुआ", "गर्म", "जमा हुआ", "बहता हुआ"], 2],
+  ["Pearls", ["कोयला", "मोती", "पत्थर", "कांच"], 1],
+  ["Getting Bad", ["सुधार होना", "स्थिति खराब होना", "खत्म होना", "बढ़ना"], 1],
+  ["Hope", ["निराशा", "आशा करना / उम्मीद", "डर", "गुस्सा"], 1],
+  ["Passes", ["रुका रहना", "गुजरना", "बढ़ना", "लौटना"], 1],
+  ["Quickly", ["धीमी गति से", "जल्दी से", "देर से", "चुपचाप"], 1],
+  ["Hour", ["मिनट", "सेकंड", "घंटा", "दिन"], 2],
+  ["Garden", ["खेत", "बगीचा", "घर", "सड़क"], 1],
+  ["Hillside", ["पहाड़ी का ढलान", "घाटी", "चोटी", "तली"], 0],
+  ["Cornfield", ["मक्के का खेत", "गेहूँ का खेत", "धान का खेत", "बगीचा"], 0],
+  ["Whole", ["आधा", "थोड़ा", "पूरा", "खाली"], 2],
+  ["White", ["काला", "सफेद", "लाल", "हरा"], 1],
+  ["Covered", ["खुला", "ढका हुआ", "साफ", "गंदा"], 1],
+  ["Salt", ["चीनी", "नमक", "रेत", "मिट्टी"], 1],
+  ["Leaf", ["पत्ता", "फूल", "डंठल", "जड़"], 0],
+  ["Remained", ["चला गया", "बचा रहा", "खत्म हो गया", "बदल गया"], 1],
+  ["Trees", ["पौधे", "घास", "पेड़", "झाड़ियाँ"], 2],
+  ["Totally", ["थोड़ा सा", "पूरी तरह से", "शायद", "बिल्कुल नहीं"], 1],
+  ["Destroyed", ["बचाया", "नष्ट हो गया", "बनाया", "सजाया"], 1],
+  ["Gone", ["आ गया", "चला गया / गायब", "बच गया", "दिखा"], 1],
+  ["Plants", ["पेड़", "पौधे", "फूल", "फल"], 1],
+  ["Soul", ["शरीर", "दिमाग", "आत्मा / मन", "हृदय"], 2],
+  ["Filled", ["खाली", "भर गया", "आधा", "सूखा"], 1],
+  ["Sadness", ["खुशी", "उत्साह", "उदासी", "क्रोध"], 2],
+  ["Storm", ["सुंदरता", "धूप", "तूफान", "वर्षा"], 2]
 ];
 
 let qs=[], ix=0, ans=[], marked=[], t=900, ti, submitted=false;
@@ -567,7 +603,7 @@ function askSub(){
 }
 
 function showHistoryModal() {
-  const history = JSON.parse(localStorage.getItem('nks_letter_to_god_results') || '[]');
+  const history = JSON.parse(localStorage.getItem('nks_letter_to_god_100_results') || '[]');
   document.getElementById('mh').innerText = "पिछले परीक्षा परिणाम";
   
   const histContainer = document.getElementById('historyContainer');
@@ -629,7 +665,7 @@ function end(){
   });
 
   try{
-    const history = JSON.parse(localStorage.getItem('nks_letter_to_god_results') || '[]');
+    const history = JSON.parse(localStorage.getItem('nks_letter_to_god_100_results') || '[]');
     history.push({
       name: document.getElementById('un').value.trim(),
       score: correct,
@@ -637,7 +673,7 @@ function end(){
       percentage: percent,
       date: new Date().toLocaleDateString('hi-IN') + ' ' + new Date().toLocaleTimeString('hi-IN', {hour: '2-digit', minute:'2-digit'})
     });
-    localStorage.setItem('nks_letter_to_god_results', JSON.stringify(history));
+    localStorage.setItem('nks_letter_to_god_100_results', JSON.stringify(history));
   }catch(e){
     console.log("Result storage unavailable");
   }
