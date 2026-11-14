@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>देशभक्तः चन्द्रशेखरः टेस्ट - NKS Coaching Center</title>
+
+<style>
+:root {
+  --bg-color: #f0f4f8;
+  --card-bg: #fff;
+  --text-color: #1e293b;
+  --primary: #1e88e5;
+  --primary-dark: #0f4c81;
+  --success: #16a34a;
+  --danger: #dc2626;
+  --border: #cbd5e1;
+  --hover-bg: #f8fafc;
+}
+
+[data-theme="dark"] {
+  --bg-color: #0f172a;
+  --card-bg: #1e293b;
+  --text-color: #f8fafc;
+  --primary: #3b82f6;
+  --primary-dark: #60a5fa;
+  --success: #22c55e;
+  --danger: #ef4444;
+  --border: #334155;
+  --hover-bg: #273548;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:sans-serif;
+  transition: background 0.3s, color 0.3s;
+}
+
+body{
+  background: var(--bg-color);
+  color: var(--text-color);
+  padding-bottom:30px;
+}
+
+.bar{
+  position:sticky;
+  top:0;
+  z-index:99;
+  background: var(--primary-dark);
+  color:#fff;
+  padding:12px 15px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.top-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tmr{
+  background:#fee2e2;
+  color:#dc2626;
+  padding:5px 12px;
+  border-radius:15px;
+  font-weight:bold;
+}
+
+.theme-btn {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.box{
+  max-width:800px;
+  margin:15px auto;
+  padding:0 12px;
+}
+
+.card{
+  background: var(--card-bg);
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+  margin-bottom:15px;
+}
+
+.btn{
+  cursor:pointer;
+  border:none;
+  border-radius:6px;
+  padding:11px 18px;
+  font-size:0.95rem;
+  font-weight:600;
+  transition: transform 0.1s ease, opacity 0.2s;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.bp{background: var(--primary); color:#fff;}
+.bs{background: var(--success); color:#fff;}
+.bg{background: var(--border); color: var(--text-color);}
+.bw { background: #f59e0b; color: #fff; }
+
+.btn:disabled{
+  opacity:0.5;
+  cursor:not-allowed;
+}
+
+.inp{
+  width:100%;
+  max-width:320px;
+  padding:10px;
+  border:2px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text-color);
+  border-radius:6px;
+  margin:10px 0 15px;
+  display:block;
+  font-size:1rem;
+}
+
+.qt{
+  font-size:1.25rem;
+  color: var(--primary-dark);
+  margin:12px 0 15px;
+  font-weight:bold;
+}
+
+.opt{
+  display:block;
+  width:100%;
+  text-align:left;
+  background: var(--hover-bg);
+  border:2px solid var(--border);
+  color: var(--text-color);
+  padding:12px;
+  border-radius:8px;
+  margin-bottom:10px;
+  font-size:1rem;
+  cursor:pointer;
+}
+
+.opt.sel{
+  background:#dbeafe;
+  border-color: var(--primary);
+  font-weight:bold;
+  color:#0f4c81;
+}
+
+[data-theme="dark"] .opt.sel {
+  background: #1e3a8a;
+  color: #93c5fd;
+}
+
+.nav{
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:15px;
+}
+
+.pal{
+  display:flex;
+  flex-wrap:wrap;
+  gap:5px;
+  margin-top:15px;
+  padding-top:12px;
+  border-top:1px solid var(--border);
+  max-height: 140px;
+  overflow-y: auto;
+}
+
+.pb{
+  width:32px;
+  height:32px;
+  border-radius:4px;
+  border:1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text-color);
+  cursor:pointer;
+  font-size:0.8rem;
+  font-weight: bold;
+}
+
+.pb.dn{
+  background: var(--success);
+  color:#fff;
+  border-color: var(--success);
+}
+
+.pb.mk {
+  background: #f59e0b;
+  color: #fff;
+  border-color: #f59e0b;
+}
+
+.pb.ac{
+  border:2px solid var(--primary-dark);
+}
+
+.sg{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
+  gap:10px;
+  margin:15px 0;
+}
+
+.sb{
+  background: var(--hover-bg);
+  padding:12px;
+  border-radius:8px;
+  text-align:center;
+  border: 1px solid var(--border);
+}
+
+.sn{
+  font-size:1.4rem;
+  font-weight:bold;
+  color: var(--primary-dark);
+  display:block;
+}
+
+.rev{
+  padding:12px;
+  border-radius:6px;
+  margin-bottom:10px;
+  border-left:4px solid var(--border);
+  background: var(--hover-bg);
+}
+
+.rev.ok{
+  border-left-color: var(--success);
+  background: rgba(22, 163, 74, 0.05);
+}
+
+.rev.no{
+  border-left-color: var(--danger);
+  background: rgba(220, 38, 38, 0.05);
+}
+
+.mod{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.6);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:200;
+}
+
+.mc{
+  background: var(--card-bg);
+  color: var(--text-color);
+  padding:22px;
+  border-radius:10px;
+  max-width:360px;
+  width:90%;
+  text-align:center;
+}
+
+.hidden{
+  display:none!important;
+}
+
+.history-box {
+  margin-top: 15px;
+  max-height: 150px;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+@media(max-width:500px){
+  .nav .btn{
+    flex:1;
+    padding:10px 8px;
+  }
+}
+</style>
+</head>
+
+<body data-theme="light">
+
+<div class="bar">
+  <div>
+    <strong>NKS Coaching Center</strong><br>
+    <small>कक्षा 10 हिंदी (संस्कृत खंड) - देशभक्तः चन्द्रशेखरः</small>
+  </div>
+  <div class="top-controls">
+    <div class="tmr" id="tm">⏱ 02:00</div>
+    <button class="theme-btn" onclick="toggleTheme()">🌙 मोड</button>
+  </div>
+</div>
+
+<div class="box">
+
+  <!-- START SCREEN -->
+  <div id="s1" class="card">
+    <h2 style="color:var(--primary-dark);margin-bottom:8px">
+      देशभक्तः चन्द्रशेखरः - संस्कृत शब्दार्थ टेस्ट
+    </h2>
+    <p style="margin-bottom:12px;color:var(--text-color);opacity:0.8">
+      कुल प्रश्न: 27 | समय: 02 मिनट | प्रत्येक सही उत्तर: 1 अंक
+    </p>
+
+    <label><strong>अपना नाम लिखें:</strong></label>
+    <input type="text" id="un" class="inp" placeholder="विद्यार्थी का नाम...">
+
+    <div style="display:flex; gap:10px; flex-wrap:wrap;">
+      <button class="btn bp" onclick="go()">टेस्ट शुरू करें →</button>
+      <button class="btn bg" onclick="showHistoryModal()">पिछले स्कोर देखें</button>
+      <button class="btn bg" onclick="history.back()">← पीछे जाएँ (Back)</button>
+    </div>
+  </div>
+
+  <!-- TEST SCREEN -->
+  <div id="s2" class="card hidden">
+    <div style="display:flex;justify-content:space-between;color:var(--text-color);font-size:0.9rem; opacity:0.8">
+      <span id="qc">प्रश्न 1/27</span>
+      <div>
+        <button class="btn bw" style="padding:4px 8px; font-size:0.8rem;" onclick="toggleMark()">⭐ मार्क करें</button>
+        <span id="sc" style="margin-left: 10px;">हल: 0</span>
+      </div>
+    </div>
+
+    <div class="qt" id="qt"></div>
+    <div id="ob"></div>
+
+    <div class="nav">
+      <button class="btn bg" id="pb" onclick="mv(-1)">← पिछला</button>
+      <button class="btn bp" id="nb" onclick="mv(1)">अगला →</button>
+      <button class="btn bs" onclick="askSub()">Submit Test</button>
+    </div>
+
+    <div class="pal" id="pl"></div>
+  </div>
+
+  <!-- RESULT SCREEN -->
+  <div id="s3" class="hidden">
+    <div class="card" style="text-align:center">
+      <h2 style="color:var(--primary-dark)">परीक्षा परिणाम - NKS Coaching Center</h2>
+      <p style="margin:6px 0">विद्यार्थी: <strong id="rn"></strong></p>
+
+      <div class="sg">
+        <div class="sb"><span class="sn" id="rs">0/27</span> अंक</div>
+        <div class="sb"><span class="sn" id="rp">0%</span> प्रतिशत</div>
+        <div class="sb" style="background:rgba(22,163,74,0.1)"><span class="sn" style="color:var(--success)" id="rok">0</span> सही</div>
+        <div class="sb" style="background:rgba(220,38,38,0.1)"><span class="sn" style="color:var(--danger)" id="rno">0</span> गलत</div>
+      </div>
+
+      <div style="display:flex; justify-content:center; gap:10px; margin-top:15px; flex-wrap:wrap;">
+        <button class="btn bp" onclick="location.reload()">दोबारा टेस्ट दें</button>
+        <button class="btn bg" onclick="showHistoryModal()">स्कोर हिस्ट्री</button>
+        <button class="btn bg" onclick="history.back()">← पीछे जाएँ (Back)</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3 style="color:var(--primary-dark);margin-bottom:10px">उत्तर कुंजी (Answer Key)</h3>
+      <div id="rv"></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- CONFIRMATION & HISTORY POPUP -->
+<div id="md" class="mod hidden">
+  <div class="mc">
+    <h3 id="mh" style="color:var(--primary-dark);margin-bottom:8px">NKS Coaching Center</h3>
+    <p id="mm" style="margin-bottom:18px"></p>
+    <div id="historyContainer" class="history-box hidden"></div>
+    <div style="display:flex; justify-content:center; gap:10px;">
+      <button class="btn bg" id="mc1" onclick="clM()">नहीं</button>
+      <button class="btn bs" id="mc2" onclick="end()">हाँ, सबमिट करें</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ===============================
+// QUESTION DATABASE (27 WORDS)
+// ===============================
+const d=[
+  ["दुर्धर्षः", ["साधारण", "अदम्य या जिसे दबाया न जा सके", "कमजोर", "छोटा"], 1],
+  ["पारसीकः", ["भारतीय", "पारसी (अंग्रेज न्यायाधीश)", "यूनानी", "चीनी"], 1],
+  ["अभियोगः", ["प्रशंसा", "मुकदमा", "पुरस्कार", "सम्मान"], 1],
+  ["पुष्टाङ्गः", ["कमजोर शरीर वाला", "मजबूत शरीर वाला", "छोटा शरीर", "रोगी"], 1],
+  ["गौरवर्णः", ["साँवला", "गोरे रंग का", "काला", "पीला"], 1],
+  ["षोडशवर्षीयः", ["दस वर्ष का", "बारह वर्ष का", "सोलह वर्ष का", "बीस वर्ष का"], 2],
+  ["गतदिने", ["आने वाले कल में", "बीते हुए कल में", "परसों", "आज"], 1],
+  ["असहयोगिनाम्", ["सहयोगियों की", "असहयोग आंदोलनकारियों की", "शत्रुओं की", "मित्रों की"], 1],
+  ["प्रस्तरखण्डेन", ["लकड़ी के टुकड़े से", "पत्थर के टुकड़े से", "लोहे से", "तलवार से"], 1],
+  ["आहतः", ["सुरक्षित", "घायल हुआ", "प्रसन्न", "स्वस्थ"], 1],
+  ["विलोकयन्", ["देखते हुए", "सुनते हुए", "बोलते हुए", "चलते हुए"], 0],
+  ["स्थिरीभूय", ["डरकर", "निडर या स्थिर होकर", "भागकर", "रोकर"], 1],
+  ["स्वगतम्", ["जोर से", "मन ही मन में", "दूसरों से", "सबके सामने"], 1],
+  ["प्रमत्तः", ["समझदार", "मतवाला या दीवाना", "शांत", "क्रूर"], 1],
+  ["प्रकाशम्", ["चुपचाप", "जोर से या प्रकट रूप में", "धीरे से", "मन में"], 1],
+  ["धृष्टः", ["विनम्र", "ढीठ", "शांत", "भीरु"], 1],
+  ["पञ्चदश", ["दस", "बारह", "पंद्रह", "बीस"], 2],
+  ["कशाघातान्", ["फूलों की वर्षा", "कोड़ों से पीटने का दण्ड", "पुरस्कार", "सम्मान"], 1],
+  ["कौपीनमात्रावशेषः", ["पूर्ण वस्त्र पहने हुए", "केवल लँगोटी पहने हुए", "बिना वस्त्र के", "सुंदर वस्त्रों में"], 1],
+  ["फलकेन", ["मंच से", "तख्ते या टिकटी से", "कुर्सी से", "भूमि से"], 1],
+  ["दृढम्", ["कमजोरी से", "मजबूती से", "धीरे से", "आसानी से"], 1],
+  ["कशाहस्तेन", ["हाथ में तलवार लिए", "हाथ में कोड़ा लिए हुए", "हाथ में डंडा लिए", "हाथ में फूल लिए"], 1],
+  ["अनुगम्यमानः", ["आगे-आगे चलता हुआ", "पीछे-पीछे चलता हुआ", "साथ खड़ा", "दूर रहता हुआ"], 1],
+  ["स्वाविनयस्य", ["अपनी नम्रता का", "अपनी उद्दण्डता का", "अपनी बुद्धिमत्ता का", "अपनी वीरता का"], 1],
+  ["ताडयति", ["पुकारता है", "मारता है", "बचाता है", "देखता है"], 1],
+  ["परितः", ["दूर", "चारों ओर से", "सामने", "पीछे"], 1],
+  ["वेष्टयन्ति", ["छोड़ देते हैं", "घेर लेते हैं", "भगा देते हैं", "स्वागत करते हैं"], 1],
+  ["अभिनन्दयन्ति", ["निंदा करते हैं", "स्वागत करते हैं", "अपमानित करते हैं", "दंड देते हैं"], 1],
+  ["अनन्यभक्ताः", ["कपटी भक्त", "सच्चे भक्त", "विदेशी", "शत्रु"], 1],
+  ["रक्तबिन्दवः", ["पसीने की बूँदें", "खून की बूँदें", "पानी की बूँदें", "आँसू"], 1],
+  ["अग्निस्फुलिङ्गाः", ["पानी की लहरें", "आग की चिंगारियाँ", "फूल", "तारे"], 1]
+];
+
+let qs=[], ix=0, ans=[], marked=[], t=120, ti, submitted=false;
+
+function toggleTheme() {
+  const body = document.body;
+  const currentTheme = body.getAttribute("data-theme");
+  const newTheme = currentTheme === "dark" ? "light" : "dark";
+  body.setAttribute("data-theme", newTheme);
+  document.querySelector(".theme-btn").innerText = newTheme === "dark" ? "☀️ मोड" : "🌙 मोड";
+}
+
+function go(){
+  const nameVal = document.getElementById('un').value.trim();
+  if(!nameVal){
+    document.getElementById('mh').innerText = "NKS Coaching Center";
+    document.getElementById('mm').innerText = "कृपया पहले अपना नाम लिखें।";
+    document.getElementById('historyContainer').classList.add('hidden');
+    document.getElementById('mc1').classList.add('hidden');
+    document.getElementById('mc2').innerText = "ठीक है";
+    document.getElementById('mc2').onclick = clM;
+    document.getElementById('md').classList.remove('hidden');
+    return;
+  }
+
+  submitted = false;
+  ix = 0;
+  t = 120; // 2 minutes (120 seconds)
+  qs = [...d].sort(() => Math.random() - 0.5);
+  ans = new Array(qs.length).fill(null);
+  marked = new Array(qs.length).fill(false);
+
+  document.getElementById('s1').classList.add('hidden');
+  document.getElementById('s2').classList.remove('hidden');
+
+  const p = document.getElementById('pl');
+  p.innerHTML = "";
+  qs.forEach((_, i) => {
+    p.innerHTML += `<button class="pb" id="p${i}" onclick="ix=${i};ld()">${i+1}</button>`;
+  });
+
+  ld();
+
+  ti = setInterval(() => {
+    t--;
+    document.getElementById('tm').innerText = `⏱ ${String(Math.floor(t/60)).padStart(2,'0')}:${String(t%60).padStart(2,'0')}`;
+    if(t <= 0){
+      clearInterval(ti);
+      end();
+    }
+  }, 1000);
+}
+
+function ld(){
+  const q = qs[ix];
+  document.getElementById('qc').innerText = `प्रश्न ${ix+1}/${qs.length}`;
+  document.getElementById('sc').innerText = `हल: ${ans.filter(x => x !== null).length}`;
+  document.getElementById('qt').innerText = `${ix+1}. ‘${q[0]}’ शब्द का सही हिंदी अर्थ क्या है?`;
+
+  const ob = document.getElementById('ob');
+  ob.innerHTML = "";
+  q[1].forEach((o, i) => {
+    ob.innerHTML += `<button class="opt ${ans[ix] === i ? 'sel' : ''}" onclick="ans[${ix}] = ${i}; ld()">${['A','B','C','D'][i]}. ${o}</button>`;
+  });
+
+  document.getElementById('pb').disabled = (ix === 0);
+  document.getElementById('nb').disabled = (ix === qs.length - 1);
+
+  qs.forEach((_, i) => {
+    let cls = 'pb';
+    if(ans[i] !== null) cls += ' dn';
+    if(marked[i]) cls += ' mk';
+    if(i === ix) cls += ' ac';
+    document.getElementById('p'+i).className = cls;
+  });
+}
+
+function mv(step){
+  const next = ix + step;
+  if(next >= 0 && next < qs.length){
+    ix = next;
+    ld();
+  }
+}
+
+function toggleMark() {
+  marked[ix] = !marked[ix];
+  ld();
+}
+
+function askSub(){
+  const done = ans.filter(x => x !== null).length;
+  document.getElementById('mh').innerText = "NKS Coaching Center";
+  document.getElementById('mm').innerText = `आपने ${done}/${qs.length} प्रश्न हल किए हैं। क्या आप टेस्ट सबमिट करना चाहते हैं?`;
+  document.getElementById('historyContainer').classList.add('hidden');
+  document.getElementById('mc1').classList.remove('hidden');
+  document.getElementById('mc1').innerText = 'नहीं, वापस जाएँ';
+  document.getElementById('mc1').onclick = clM;
+  document.getElementById('mc2').innerText = 'हाँ, सबमिट करें';
+  document.getElementById('mc2').onclick = end;
+  document.getElementById('md').classList.remove('hidden');
+}
+
+function showHistoryModal() {
+  const history = JSON.parse(localStorage.getItem('nks_chandrashekhar_results') || '[]');
+  document.getElementById('mh').innerText = "पिछले परीक्षा परिणाम";
+  
+  const histContainer = document.getElementById('historyContainer');
+  histContainer.classList.remove('hidden');
+  
+  if(history.length === 0) {
+    histContainer.innerHTML = "<p>कोई पिछला रिकॉर्ड उपलब्ध नहीं है।</p>";
+  } else {
+    histContainer.innerHTML = history.reverse().map(h => `
+      <div style="border-bottom:1px solid var(--border); padding:5px 0; text-align:left;">
+        <strong>${h.name}</strong> - स्कोर: ${h.score}/${h.total} (${h.percentage}%)<br>
+        <small style="opacity:0.7">${h.date}</small>
+      </div>
+    `).join('');
+  }
+
+  document.getElementById('mm').innerText = "";
+  document.getElementById('mc1').classList.add('hidden');
+  document.getElementById('mc2').innerText = "बंद करें";
+  document.getElementById('mc2').onclick = clM;
+  document.getElementById('md').classList.remove('hidden');
+}
+
+function clM(){
+  document.getElementById('md').classList.add('hidden');
+}
+
+function end(){
+  if(submitted) return;
+  submitted = true;
+  clearInterval(ti);
+  document.getElementById('md').classList.add('hidden');
+
+  const correct = ans.reduce((total, value, i) => total + (value === qs[i][2] ? 1 : 0), 0);
+  const attempted = ans.filter(value => value !== null).length;
+  const wrong = attempted - correct;
+  const percent = Math.round((correct / qs.length) * 100);
+
+  document.getElementById('rn').innerText = document.getElementById('un').value.trim();
+  document.getElementById('rs').innerText = `${correct}/${qs.length}`;
+  document.getElementById('rp').innerText = `${percent}%`;
+  document.getElementById('rok').innerText = correct;
+  document.getElementById('rno').innerText = wrong;
+
+  const review = document.getElementById('rv');
+  review.innerHTML = "";
+  qs.forEach((q, i) => {
+    const chosen = ans[i];
+    const isCorrect = chosen === q[2];
+    const status = chosen === null ? 'उत्तर नहीं दिया' : isCorrect ? 'सही उत्तर' : 'गलत उत्तर';
+    const div = document.createElement('div');
+    div.className = `rev ${isCorrect ? 'ok' : chosen === null ? '' : 'no'}`;
+    div.innerHTML = `
+      <strong>${i+1}. ${q[0]} — ${status}</strong>
+      <p>आपका उत्तर: ${chosen === null ? 'नहीं दिया' : `${'ABCD'[chosen]}. ${q[1][chosen]}`}</p>
+      <p>सही उत्तर: ${'ABCD'[q[2]]}. ${q[1][q[2]]}</p>
+    `;
+    review.appendChild(div);
+  });
+
+  try{
+    const history = JSON.parse(localStorage.getItem('nks_chandrashekhar_results') || '[]');
+    history.push({
+      name: document.getElementById('un').value.trim(),
+      score: correct,
+      total: qs.length,
+      percentage: percent,
+      date: new Date().toLocaleDateString('hi-IN') + ' ' + new Date().toLocaleTimeString('hi-IN', {hour: '2-digit', minute:'2-digit'})
+    });
+    localStorage.setItem('nks_chandrashekhar_results', JSON.stringify(history));
+  }catch(e){
+    console.log("Result storage unavailable");
+  }
+
+  document.getElementById('s2').classList.add('hidden');
+  document.getElementById('s3').classList.remove('hidden');
+  document.getElementById('tm').innerText = 'टेस्ट समाप्त';
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+document.getElementById('un').addEventListener('keydown', function(e){
+  if(e.key === 'Enter') go();
+});
+</script>
+
+</body>
+</html>
