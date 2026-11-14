@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 10 English - Vocabulary & Phrases Test (110 Questions) | NKS Coaching Center</title>
+
+<style>
+:root {
+  --bg-color: #f0f4f8;
+  --card-bg: #fff;
+  --text-color: #1e293b;
+  --primary: #1e88e5;
+  --primary-dark: #0f4c81;
+  --success: #16a34a;
+  --danger: #dc2626;
+  --border: #cbd5e1;
+  --hover-bg: #f8fafc;
+}
+
+[data-theme="dark"] {
+  --bg-color: #0f172a;
+  --card-bg: #1e293b;
+  --text-color: #f8fafc;
+  --primary: #3b82f6;
+  --primary-dark: #60a5fa;
+  --success: #22c55e;
+  --danger: #ef4444;
+  --border: #334155;
+  --hover-bg: #273548;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:sans-serif;
+  transition: background 0.3s, color 0.3s;
+}
+
+body{
+  background: var(--bg-color);
+  color: var(--text-color);
+  padding-bottom:30px;
+}
+
+.bar{
+  position:sticky;
+  top:0;
+  z-index:99;
+  background: var(--primary-dark);
+  color:#fff;
+  padding:12px 15px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.top-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tmr{
+  background:#fee2e2;
+  color:#dc2626;
+  padding:5px 12px;
+  border-radius:15px;
+  font-weight:bold;
+}
+
+.theme-btn {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.box{
+  max-width:800px;
+  margin:15px auto;
+  padding:0 12px;
+}
+
+.card{
+  background: var(--card-bg);
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+  margin-bottom:15px;
+}
+
+.btn{
+  cursor:pointer;
+  border:none;
+  border-radius:6px;
+  padding:11px 18px;
+  font-size:0.95rem;
+  font-weight:600;
+  transition: transform 0.1s ease, opacity 0.2s;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.bp{background: var(--primary); color:#fff;}
+.bs{background: var(--success); color:#fff;}
+.bg{background: var(--border); color: var(--text-color);}
+.bw { background: #f59e0b; color: #fff; }
+
+.btn:disabled{
+  opacity:0.5;
+  cursor:not-allowed;
+}
+
+.inp{
+  width:100%;
+  max-width:320px;
+  padding:10px;
+  border:2px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text-color);
+  border-radius:6px;
+  margin:10px 0 15px;
+  display:block;
+  font-size:1rem;
+}
+
+.qt{
+  font-size:1.25rem;
+  color: var(--primary-dark);
+  margin:12px 0 15px;
+  font-weight:bold;
+}
+
+.opt{
+  display:block;
+  width:100%;
+  text-align:left;
+  background: var(--hover-bg);
+  border:2px solid var(--border);
+  color: var(--text-color);
+  padding:12px;
+  border-radius:8px;
+  margin-bottom:10px;
+  font-size:1rem;
+  cursor:pointer;
+}
+
+.opt.sel{
+  background:#dbeafe;
+  border-color: var(--primary);
+  font-weight:bold;
+  color:#0f4c81;
+}
+
+[data-theme="dark"] .opt.sel {
+  background: #1e3a8a;
+  color: #93c5fd;
+}
+
+.nav{
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:15px;
+}
+
+.pal{
+  display:flex;
+  flex-wrap:wrap;
+  gap:5px;
+  margin-top:15px;
+  padding-top:12px;
+  border-top:1px solid var(--border);
+  max-height: 140px;
+  overflow-y: auto;
+}
+
+.pb{
+  width:32px;
+  height:32px;
+  border-radius:4px;
+  border:1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text-color);
+  cursor:pointer;
+  font-size:0.8rem;
+  font-weight: bold;
+}
+
+.pb.dn{
+  background: var(--success);
+  color:#fff;
+  border-color: var(--success);
+}
+
+.pb.mk {
+  background: #f59e0b;
+  color: #fff;
+  border-color: #f59e0b;
+}
+
+.pb.ac{
+  border:2px solid var(--primary-dark);
+}
+
+.sg{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
+  gap:10px;
+  margin:15px 0;
+}
+
+.sb{
+  background: var(--hover-bg);
+  padding:12px;
+  border-radius:8px;
+  text-align:center;
+  border: 1px solid var(--border);
+}
+
+.sn{
+  font-size:1.4rem;
+  font-weight:bold;
+  color: var(--primary-dark);
+  display:block;
+}
+
+.rev{
+  padding:12px;
+  border-radius:6px;
+  margin-bottom:10px;
+  border-left:4px solid var(--border);
+  background: var(--hover-bg);
+}
+
+.rev.ok{
+  border-left-color: var(--success);
+  background: rgba(22, 163, 74, 0.05);
+}
+
+.rev.no{
+  border-left-color: var(--danger);
+  background: rgba(220, 38, 38, 0.05);
+}
+
+.mod{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.6);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:200;
+}
+
+.mc{
+  background: var(--card-bg);
+  color: var(--text-color);
+  padding:22px;
+  border-radius:10px;
+  max-width:360px;
+  width:90%;
+  text-align:center;
+}
+
+.hidden{
+  display:none!important;
+}
+
+.history-box {
+  margin-top: 15px;
+  max-height: 150px;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+@media(max-width:500px){
+  .nav .btn{
+    flex:1;
+    padding:10px 8px;
+  }
+}
+</style>
+</head>
+
+<body data-theme="light">
+
+<div class="bar">
+  <div>
+    <strong>NKS Coaching Center</strong><br>
+    <small>Class 10 English - Vocabulary & Phrases Test (110 Questions)</small>
+  </div>
+  <div class="top-controls">
+    <div class="tmr" id="tm">⏱ 20:00</div>
+    <button class="theme-btn" onclick="toggleTheme()">🌙 मोड</button>
+  </div>
+</div>
+
+<div class="box">
+
+  <!-- START SCREEN -->
+  <div id="s1" class="card">
+    <h2 style="color:var(--primary-dark);margin-bottom:8px">
+      English - 110 शब्दार्थ एवं फ्रेजेज टेस्ट
+    </h2>
+    <p style="margin-bottom:12px;color:var(--text-color);opacity:0.8">
+      कुल प्रश्न: 110 | समय: 20 मिनट | प्रत्येक सही उत्तर: 1 अंक
+    </p>
+
+    <label><strong>विद्यार्थी का नाम लिखें:</strong></label>
+    <input type="text" id="un" class="inp" placeholder="अपना नाम दर्ज करें...">
+
+    <div style="display:flex; gap:10px; flex-wrap:wrap;">
+      <button class="btn bp" onclick="go()">टेस्ट शुरू करें →</button>
+      <button class="btn bg" onclick="showHistoryModal()">पिछले स्कोर देखें</button>
+    </div>
+  </div>
+
+  <!-- TEST SCREEN -->
+  <div id="s2" class="card hidden">
+    <div style="display:flex;justify-content:space-between;color:var(--text-color);font-size:0.9rem; opacity:0.8">
+      <span id="qc">प्रश्न 1/110</span>
+      <div>
+        <button class="btn bw" style="padding:4px 8px; font-size:0.8rem;" onclick="toggleMark()">⭐ मार्क करें</button>
+        <span id="sc" style="margin-left: 10px;">हल: 0</span>
+      </div>
+    </div>
+
+    <div class="qt" id="qt"></div>
+    <div id="ob"></div>
+
+    <div class="nav">
+      <button class="btn bg" id="pb" onclick="mv(-1)">← पिछला</button>
+      <button class="btn bp" id="nb" onclick="mv(1)">अगला →</button>
+      <button class="btn bs" onclick="askSub()">Submit Test</button>
+    </div>
+
+    <div class="pal" id="pl"></div>
+  </div>
+
+  <!-- RESULT SCREEN -->
+  <div id="s3" class="hidden">
+    <div class="card" style="text-align:center">
+      <h2 style="color:var(--primary-dark)">परीक्षा परिणाम - NKS Coaching Center</h2>
+      <p style="margin:6px 0">विद्यार्थी: <strong id="rn"></strong></p>
+
+      <div class="sg">
+        <div class="sb"><span class="sn" id="rs">0/110</span> अंक</div>
+        <div class="sb"><span class="sn" id="rp">0%</span> प्रतिशत</div>
+        <div class="sb" style="background:rgba(22,163,74,0.1)"><span class="sn" style="color:var(--success)" id="rok">0</span> सही</div>
+        <div class="sb" style="background:rgba(220,38,38,0.1)"><span class="sn" style="color:var(--danger)" id="rno">0</span> गलत</div>
+      </div>
+
+      <div style="display:flex; justify-content:center; gap:10px; margin-top:15px; flex-wrap:wrap;">
+        <button class="btn bp" onclick="location.reload()">दोबारा टेस्ट दें</button>
+        <button class="btn bg" onclick="showHistoryModal()">स्कोर हिस्ट्री</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3 style="color:var(--primary-dark);margin-bottom:10px">उत्तर कुंजी (Answer Key)</h3>
+      <div id="rv"></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- CONFIRMATION & HISTORY POPUP -->
+<div id="md" class="mod hidden">
+  <div class="mc">
+    <h3 id="mh" style="color:var(--primary-dark);margin-bottom:8px">NKS Coaching Center</h3>
+    <p id="mm" style="margin-bottom:18px"></p>
+    <div id="historyContainer" class="history-box hidden"></div>
+    <div style="display:flex; justify-content:center; gap:10px;">
+      <button class="btn bg" id="mc1" onclick="clM()">नहीं</button>
+      <button class="btn bs" id="mc2" onclick="end()">हाँ, सबमिट करें</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ===============================
+// QUESTION DATABASE (ALL 110 ITEMS)
+// ===============================
+const d = [
+  ["Notice", ["नजरअंदाज करना", "ध्यान देना", "भूलना", "देखना"], 1],
+  ["Concern", ["निश्चिंतता", "चिंता", "प्रसन्नता", "लापरवाही"], 1],
+  ["Offend", ["प्रसन्न करना", "नाराज करना / अपमान करना", "सम्मान करना", "मदद करना"], 1],
+  ["Disturb", ["शांत करना", "परेशान करना", "सजाना", "बचाना"], 1],
+  ["Polite", ["अविनीत", "विनम्र", "कठोर", "क्रूर"], 1],
+  ["Wishing", ["श्राप देना", "इच्छा करना", "नफरत करना", "भागना"], 1],
+  ["Unlikely", ["संभावित", "असंभव-सा / जिसकी संभावना कम हो", "निश्चित", "स्पष्ट"], 1],
+  ["Against", ["पक्ष में", "विरुद्ध", "साथ", "दूर"], 1],
+  ["Fishermen", ["व्यापारी", "मछुआरे", "किसान", "शिकारी"], 1],
+  ["Relative Clause", ["संज्ञा उपवाक्य", "संबंधवाचक उपवाक्य", "विशेषण", "क्रिया"], 1],
+  ["Relative Pronoun", ["व्यक्तिवाचक सर्वनाम", "संबंधवाचक सर्वनाम", "निश्चयवाचक सर्वनाम", "निजवाचक सर्वनाम"], 1],
+  ["Whom", ["कौन", "किसे / जिसे", "किसका", "कहाँ"], 1],
+  ["Whose", ["जो", "जिसका / जिसकी / जिसके", "कौन-सा", "किसे"], 1],
+  ["Which", ["कौन-सा / जो", "किसका", "कहाँ", "कब"], 0],
+  ["Non-Defining", ["निश्चित जानकारी देने वाला", "अतिरिक्त जानकारी देने वाला", "मुख्य जानकारी", "छुपा हुआ"], 1],
+  ["Identity", ["अस्पष्टता", "पहचान", "विनाश", "भेदभाव"], 1],
+  ["Comma", ["पूर्ण विराम", "अल्पविराम", "प्रश्नसूचक", "विस्मयादिबोधक"], 1],
+  ["Dash", ["पूर्ण विराम", "डैश चिह्न", "अल्पविराम", "कोष्ठक"], 1],
+  ["Rewrite", ["मिटाना", "दोबारा लिखना", "पढ़ना", "सुनना"], 1],
+  ["Hidden", ["प्रकट", "छिपा हुआ", "साफ", "स्पष्ट"], 1],
+  ["Negative", ["सकारात्मक", "नकारात्मक", "तटस्थ", "भविष्य"], 1],
+  ["Emphasis", ["कमजोर करना", "जोर देना", "हटाना", "छुपाना"], 1],
+  ["Absence", ["उपस्थिति", "अनुपस्थिति", "भीड़", "मौजूदगी"], 1],
+  ["Contradict", ["समर्थन करना", "विरोध करना", "मानना", "स्वीकार करना"], 1],
+  ["Contradiction", ["सहमति", "विरोधाभास", "मेल", "समर्थन"], 1],
+  ["Emphasise", ["नजरअंदाज करना", "जोर देना", "कम करना", "मिटाना"], 1],
+  ["Slight", ["अत्यधिक", "थोड़ा-सा", "बड़ा", "गहरा"], 1],
+  ["Metaphor", ["उपमा", "रूपक", "अतिशयोक्ति", "श्लेष"], 1],
+  ["Greek", ["रोमन", "यूनानी", "लैटिन", "फारसी"], 1],
+  ["Transfer", ["स्थिर रखना", "स्थानांतरण", "रोकना", "बचाना"], 1],
+  ["Compare", ["अंतर करना", "तुलना करना", "अलग करना", "दूर करना"], 1],
+  ["Quality", ["दोष", "गुण", "कमजोरी", "बुराई"], 1],
+  ["Feature", ["कमी", "विशेषता", "दोष", "सीमा"], 1],
+  ["Object", ["निर्जीव", "वस्तु", "मनुष्य", "स्थान"], 1],
+  ["Mass", ["कम मात्रा", "द्रव्यमान / विशाल मात्रा", "टुकड़ा", "बिंदु"], 1],
+  ["Hugeness", ["छोटाई", "विशालता", "कमी", "कमजोरी"], 1],
+  ["Epidemic", ["स्थानीय बीमारी", "महामारी", "इलाज", "दवा"], 1],
+  ["Disease", ["स्वास्थ्य", "बीमारी", "आरोग्य", "ऊर्जा"], 1],
+  ["Spreads", ["सिकुड़ता है", "फैलता है", "रुकता है", "मिटता है"], 1],
+  ["Rapidly", ["धीमी गति से", "तेजी से", "कभी-कभी", "मुश्किल से"], 1],
+  ["Significance", ["महत्व", "तुच्छता", "असरहीन", "बेकार"], 0],
+  ["Miracle", ["सामान्य बात", "चमत्कार", "दुर्घटना", "समस्या"], 1],
+  ["Difficulty", ["सरलता", "कठिनाई", "सुविधा", "आसानी"], 1],
+  ["Solved", ["बिगाड़ा", "हल किया गया", "उलझाया", "छोड़ा"], 1],
+  ["Encourage", ["निराश करना", "प्रोत्साहित करना", "डराना", "रोकना"], 1],
+  ["Share", ["छिपाना", "साझा करना", "रखना", "अलग करना"], 1],
+  ["Ideas", ["समस्याएं", "विचार", "सवालों", "जवाबों"], 1],
+  ["Experience", ["अज्ञान", "अनुभव", "शुरुआत", "अशिक्षा"], 1],
+  ["Volunteer", ["कर्मचारी", "स्वयंसेवक", "मालिक", "नौकर"], 1],
+  ["Actually", ["शायद", "वास्तव में", "कभी नहीं", "झूठमुठ"], 1],
+  ["Faith Can Move Mountains", ["विश्वास से असंभव काम भी संभव हो सकते हैं।", "पहाड़ तोड़ना", "विश्वास टूटना", "असंभव कार्य"], 0],
+  ["Put Our Faith In", ["विश्वास तोड़ना", "विश्वास करना", "संदेह करना", "शक करना"], 1],
+  ["Write A Letter", ["पढ़ना", "पत्र लिखना", "फाड़ना", "भेजना"], 1],
+  ["Ask For", ["मना करना", "माँगना", "देना", "छोड़ना"], 1],
+  ["At Least", ["अधिक से अधिक", "कम से कम", "बिल्कुल नहीं", "लगभग"], 1],
+  ["Nothing Else But", ["इसके अलावा कुछ नहीं", "सब कुछ", "बहुत कुछ", "कुछ चीजें"], 0],
+  ["God Willing", ["ईश्वर की इच्छा से", "भाग्य भरोसे", "अनजाने में", "अचानक"], 0],
+  ["No Other Reason Than", ["कई कारण", "इसके अलावा कोई दूसरा कारण नहीं", "नया कारण", "स्पष्ट कारण"], 1],
+  ["Along With", ["के बिना", "के साथ-साथ", "दूर", "अलग"], 1],
+  ["For An Hour", ["एक दिन", "एक घंटे तक", "एक पल", "एक साल"], 1],
+  ["In The Middle Of", ["किनारे पर", "के बीच में", "बाहर", "दूर"], 1],
+  ["Filled With Sadness", ["खुशी से भरना", "दुःख से भर जाना", "उत्साहित होना", "शांत होना"], 1],
+  ["Go Hungry", ["पेट भरना", "भूखा रहना", "खाना", "सोना"], 1],
+  ["All Through The Night", ["दिनभर", "पूरी रात", "शाम को", "दोपहर में"], 1],
+  ["In Order To", ["के बिना", "के उद्देश्य से", "चूँकि", "यद्यपि"], 1],
+  ["Deep In One's Conscience", ["ऊपरी मन से", "किसी की अंतरात्मा की गहराई में", "अज्ञानता में", "खुशी में"], 1],
+  ["Nothing Less Than", ["इससे अधिक", "इससे कम कुछ नहीं", "बहुत ज्यादा", "कुछ नहीं"], 1],
+  ["Broke Out Laughing", ["रोना", "अचानक हँस पड़ा", "चुप रहना", "डरना"], 1],
+  ["In Order Not To", ["ताकि ऐसा हो", "ताकि ऐसा न हो", "इसलिए कि", "चूँकि"], 1],
+  ["Stick To A Resolution", ["निश्चय बदलना", "अपने निश्चय पर कायम रहना", "हार मानना", "भागना"], 1],
+  ["Gather Together", ["अलग करना", "इकट्ठा करना", "खोना", "फेंकना"], 1],
+  ["A Little More Than Half", ["आधे से कम", "आधे से थोड़ा अधिक", "पूरा", "चौथाई"], 1],
+  ["Earlier Than Usual", ["देर से", "सामान्य से पहले", "समय पर", "कभी नहीं"], 1],
+  ["Not The Slightest", ["बहुत अधिक", "जरा-सा भी नहीं", "पूरा", "थोड़ा"], 1],
+  ["Look On", ["अनदेखा करना", "देखते रहना", "भागना", "छुपना"], 1],
+  ["With Confidence", ["डर के साथ", "विश्वास के साथ", "संदेह से", "रोते हुए"], 1],
+  ["Through The Mail", ["पैदल", "डाक के माध्यम से", "हवा में", "फोन से"], 1],
+  ["A Bunch Of", ["अकेला", "एक समूह / झुंड", "दूर", "अलग"], 1],
+  ["Give Up Hope", ["आशा रखना", "आशा छोड़ देना", "प्रयास करना", "जीतना"], 1],
+  ["Hoping Against Hope", ["पूरी उम्मीद होना", "बहुत कम संभावना होने पर भी उम्मीद करना", "निराश होना", "छोड़ देना"], 1],
+  ["In The Hope Of", ["निराशा में", "इस आशा से कि", "बिना उम्मीद", "डर से"], 1],
+  ["As If", ["चूँकि", "मानो / जैसे कि", "इसलिए", "यद्यपि"], 1],
+  ["One After Another", ["साथ-साथ", "एक के बाद एक", "विपरीत", "दूर"], 1],
+  ["At The Same Time", ["अलग-अलग समय", "उसी समय", "बाद में", "पहले"], 1],
+  ["On His Own", ["दूसरों के सहारे", "अपने आप / अकेले", "साथ में", "भीड़ में"], 1],
+  ["Take Place", ["रोकना", "घटित होना", "समाप्त होना", "बचाना"], 1],
+  ["Due To", ["के बावजूद", "के कारण", "के लिए", "बिना"], 1],
+  ["In Recent Years", ["पुराने समय में", "हाल के वर्षों में", "भविष्य में", "कभी नहीं"], 1],
+  ["Save Water", ["पानी बर्बाद करना", "पानी बचाना", "पानी बेचना", "पानी पीना"], 1],
+  ["Write Back", ["पत्र फाड़ना", "जवाबी पत्र लिखना", "पढ़ना", "भेजना"], 1],
+  ["Apologies", ["बधाई", "माफी माँगता है", "धन्यवाद", "आदेश"], 1],
+  ["Birthday", ["मृत्यु दिन", "जन्मदिन", "विवाह वर्षगांठ", "उत्सव"], 1],
+  ["Moved", ["रुके रहे", "स्थान बदल लिया / चले गए", "बैठे रहे", "सोए रहे"], 1],
+  ["Admitted", ["निकाला गया", "दाखिला दिलाया", "भगाया गया", "रोका गया"], 1],
+  ["Close", ["दूर", "पास / नजदीक", "लंबा", "छोटा"], 1],
+  ["Sitting", ["खड़ा हुआ", "बैठा हुआ", "लेटा हुआ", "दौड़ता हुआ"], 1],
+  ["Windowsill", ["दरवाजे की चौखट", "खिड़की की चौखट", "छत", "फर्श"], 1],
+  ["Slight", ["गहरा", "हल्का / थोड़ा", "विशाल", "तेज"], 1],
+  ["Drizzle", ["मूसलाधार बारिश", "बूंदाबांदी", "तूफान", "ओले"], 1],
+  ["Outside", ["अंदर", "बाहर", "पास", "दूर"], 1],
+  ["Reminded", ["भुलाया", "याद दिलाया", "छिपाया", "दिखाया"], 1],
+  ["Good Times", ["बुरे दिन", "अच्छे दिन / सुखद समय", "कठिन समय", "उदासी"], 1],
+  ["Together", ["अकेले", "साथ में", "अलग", "दूर"], 1],
+  ["Last Year", ["अगले साल", "पिछले साल", "इस साल", "कभी नहीं"], 1],
+  ["Address", ["नाम", "पता", "स्थान", "शहर"], 1],
+  ["Reader", ["लेखक", "पाठक", "प्रकाशक", "विक्रेता"], 1],
+  ["Month", ["दिन", "सप्ताह", "महीना", "वर्ष"], 2],
+  ["Earlier", ["बाद में", "पहले", "साथ में", "दूर"], 1],
+  ["Writing", ["पढ़ना", "लिखना", "सुनना", "बोलना"], 1],
+  ["Letter", ["किताब", "पत्र", "पत्रिका", "कागज"], 1]
+];
+
+let qs=[], ix=0, ans=[], marked=[], t=1200, ti, submitted=false;
+
+function toggleTheme() {
+  const body = document.body;
+  const currentTheme = body.getAttribute("data-theme");
+  const newTheme = currentTheme === "dark" ? "light" : "dark";
+  body.setAttribute("data-theme", newTheme);
+  document.querySelector(".theme-btn").innerText = newTheme === "dark" ? "☀️ मोड" : "🌙 मोड";
+}
+
+function go(){
+  const nameVal = document.getElementById('un').value.trim();
+  if(!nameVal){
+    document.getElementById('mh').innerText = "NKS Coaching Center";
+    document.getElementById('mm').innerText = "कृपया पहले अपना नाम लिखें।";
+    document.getElementById('historyContainer').classList.add('hidden');
+    document.getElementById('mc1').classList.add('hidden');
+    document.getElementById('mc2').innerText = "ठीक है";
+    document.getElementById('mc2').onclick = clM;
+    document.getElementById('md').classList.remove('hidden');
+    return;
+  }
+
+  submitted = false;
+  ix = 0;
+  t = 1200; // 20 minutes (1200 seconds)
+  qs = [...d].sort(() => Math.random() - 0.5);
+  ans = new Array(qs.length).fill(null);
+  marked = new Array(qs.length).fill(false);
+
+  document.getElementById('s1').classList.add('hidden');
+  document.getElementById('s2').classList.remove('hidden');
+
+  const p = document.getElementById('pl');
+  p.innerHTML = "";
+  qs.forEach((_, i) => {
+    p.innerHTML += `<button class="pb" id="p${i}" onclick="ix=${i};ld()">${i+1}</button>`;
+  });
+
+  ld();
+
+  ti = setInterval(() => {
+    t--;
+    document.getElementById('tm').innerText = `⏱ ${String(Math.floor(t/60)).padStart(2,'0')}:${String(t%60).padStart(2,'0')}`;
+    if(t <= 0){
+      clearInterval(ti);
+      end();
+    }
+  }, 1000);
+}
+
+function ld(){
+  const q = qs[ix];
+  document.getElementById('qc').innerText = `प्रश्न ${ix+1}/${qs.length}`;
+  document.getElementById('sc').innerText = `हल: ${ans.filter(x => x !== null).length}`;
+  document.getElementById('qt').innerText = `${ix+1}. शब्द / वाक्यांश “${q[0]}” का सही हिंदी अर्थ क्या है?`;
+
+  const ob = document.getElementById('ob');
+  ob.innerHTML = "";
+  q[1].forEach((o, i) => {
+    ob.innerHTML += `<button class="opt ${ans[ix] === i ? 'sel' : ''}" onclick="ans[${ix}] = ${i}; ld()">${['A','B','C','D'][i]}. ${o}</button>`;
+  });
+
+  document.getElementById('pb').disabled = (ix === 0);
+  document.getElementById('nb').disabled = (ix === qs.length - 1);
+
+  qs.forEach((_, i) => {
+    let cls = 'pb';
+    if(ans[i] !== null) cls += ' dn';
+    if(marked[i]) cls += ' mk';
+    if(i === ix) cls += ' ac';
+    document.getElementById('p'+i).className = cls;
+  });
+}
+
+function mv(step){
+  const next = ix + step;
+  if(next >= 0 && next < qs.length){
+    ix = next;
+    ld();
+  }
+}
+
+function toggleMark() {
+  marked[ix] = !marked[ix];
+  ld();
+}
+
+function askSub(){
+  const done = ans.filter(x => x !== null).length;
+  document.getElementById('mh').innerText = "NKS Coaching Center";
+  document.getElementById('mm').innerText = `आपने ${done}/${qs.length} प्रश्न हल किए हैं। क्या आप टेस्ट सबमिट करना चाहते हैं?`;
+  document.getElementById('historyContainer').classList.add('hidden');
+  document.getElementById('mc1').classList.remove('hidden');
+  document.getElementById('mc1').innerText = 'नहीं, वापस जाएँ';
+  document.getElementById('mc1').onclick = clM;
+  document.getElementById('mc2').innerText = 'हाँ, सबमिट करें';
+  document.getElementById('mc2').onclick = end;
+  document.getElementById('md').classList.remove('hidden');
+}
+
+function showHistoryModal() {
+  const history = JSON.parse(localStorage.getItem('nks_vocabulary_110_results') || '[]');
+  document.getElementById('mh').innerText = "पिछले परीक्षा परिणाम";
+  
+  const histContainer = document.getElementById('historyContainer');
+  histContainer.classList.remove('hidden');
+  
+  if(history.length === 0) {
+    histContainer.innerHTML = "<p>कोई पिछला रिकॉर्ड उपलब्ध नहीं है।</p>";
+  } else {
+    histContainer.innerHTML = history.reverse().map(h => `
+      <div style="border-bottom:1px solid var(--border); padding:5px 0; text-align:left;">
+        <strong>${h.name}</strong> - स्कोर: ${h.score}/${h.total} (${h.percentage}%)<br>
+        <small style="opacity:0.7">${h.date}</small>
+      </div>
+    `).join('');
+  }
+
+  document.getElementById('mm').innerText = "";
+  document.getElementById('mc1').classList.add('hidden');
+  document.getElementById('mc2').innerText = "बंद करें";
+  document.getElementById('mc2').onclick = clM;
+  document.getElementById('md').classList.remove('hidden');
+}
+
+function clM(){
+  document.getElementById('md').classList.add('hidden');
+}
+
+function end(){
+  if(submitted) return;
+  submitted = true;
+  clearInterval(ti);
+  document.getElementById('md').classList.add('hidden');
+
+  const correct = ans.reduce((total, value, i) => total + (value === qs[i][2] ? 1 : 0), 0);
+  const attempted = ans.filter(value => value !== null).length;
+  const wrong = attempted - correct;
+  const percent = Math.round((correct / qs.length) * 100);
+
+  document.getElementById('rn').innerText = document.getElementById('un').value.trim();
+  document.getElementById('rs').innerText = `${correct}/${qs.length}`;
+  document.getElementById('rp').innerText = `${percent}%`;
+  document.getElementById('rok').innerText = correct;
+  document.getElementById('rno').innerText = wrong;
+
+  const review = document.getElementById('rv');
+  review.innerHTML = "";
+  qs.forEach((q, i) => {
+    const chosen = ans[i];
+    const isCorrect = chosen === q[2];
+    const status = chosen === null ? 'उत्तर नहीं दिया' : isCorrect ? 'सही उत्तर' : 'गलत उत्तर';
+    const div = document.createElement('div');
+    div.className = `rev ${isCorrect ? 'ok' : chosen === null ? '' : 'no'}`;
+    div.innerHTML = `
+      <strong>${i+1}. ${q[0]} — ${status}</strong>
+      <p>आपका उत्तर: ${chosen === null ? 'नहीं दिया' : `${'ABCD'[chosen]}. ${q[1][chosen]}`}</p>
+      <p>सही उत्तर: ${'ABCD'[q[2]]}. ${q[1][q[2]]}</p>
+    `;
+    review.appendChild(div);
+  });
+
+  try{
+    const history = JSON.parse(localStorage.getItem('nks_vocabulary_110_results') || '[]');
+    history.push({
+      name: document.getElementById('un').value.trim(),
+      score: correct,
+      total: qs.length,
+      percentage: percent,
+      date: new Date().toLocaleDateString('hi-IN') + ' ' + new Date().toLocaleTimeString('hi-IN', {hour: '2-digit', minute:'2-digit'})
+    });
+    localStorage.setItem('nks_vocabulary_110_results', JSON.stringify(history));
+  }catch(e){
+    console.log("Result storage unavailable");
+  }
+
+  document.getElementById('s2').classList.add('hidden');
+  document.getElementById('s3').classList.remove('hidden');
+  document.getElementById('tm').innerText = 'टेस्ट समाप्त';
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+document.getElementById('un').addEventListener('keydown', function(e){
+  if(e.key === 'Enter') go();
+});
+</script>
+
+</body>
+</html>
